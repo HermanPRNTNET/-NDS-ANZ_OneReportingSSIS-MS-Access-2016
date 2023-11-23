@@ -1,0 +1,3062 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/7/2023 8:20:34 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="NDS-LPT-0501"
+  DTS:CreatorName="NDS-LPT-0501\NDS"
+  DTS:DTSID="{537FFC6D-BCB1-461E-B9AD-FB78DD536922}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STG_Support_Data_SLIK_ShareFolder"
+  DTS:PackageType="5"
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{84E7AD63-9922-4D90-92D3-35ADF90E6E0A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ANZOneReportingSLIK]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+      DTS:ObjectName="ANZOneReportingSLIK">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}ndsantasena.southeastasia.cloudapp.azure.com.ANZOneReportingSLIKAlpha.hend;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABRUoyH3i1/5rouzf95e5i7YmP8i3XhuZ1bOkiHfQTYywAAAAAOgAAAAAIAACAAAAASqk9hVuRvL6c0tTdGM4eingw4xM/0/NiWpGfjQ6pbFiAAAACINUoaVezUoPciLpwnhrobV6U5TQlGjl16sLjesUwb2EAAAADONgd2SsPBlvy8mIa1w2Jzb3b/IsPUwmXS6xB90TzC9aZOJZ+9kkc9rB+BVz3wclTUVLg6JXVtmpSj+jXLttno</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{539BD2EA-CDA1-4A8F-A61B-A4648F172E87}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::SourceSupportDataSLIK_ShareFolder]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\From\Support data SLIK.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=NO&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;FileNameSupportDataSLIK_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{68AB55A7-F50A-459B-8BFA-2C813B8530DD}"
+      DTS:ObjectName="FileNameSupportDataSLIK_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;FolderPathSupportDataSLIK_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{22797BDF-403F-4790-925A-4BC7C749DB5D}"
+      DTS:ObjectName="FolderPathSupportDataSLIK_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;DestSupportDataSLIK_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{7265591D-D0B2-41C9-B5BC-5114DAA092A3}"
+      DTS:ObjectName="DestSupportDataSLIK_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;SourceSupportDataSLIK_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{95E89FED-57A5-49C7-BC3D-60CB08E0183A}"
+      DTS:ObjectName="SourceSupportDataSLIK_ShareFolder" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0812BE5A-5AC9-4989-8E79-D1C5CE03B786}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestSupportDataSLIK_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Copied Folder</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B1964B5F-5077-4004-9C1D-4B932F6016AC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNameSupportDataSLIK_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">Support data SLIK.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5062F553-82CC-45AD-9E31-ACBE36058CA3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPathSupportDataSLIK_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\From\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4EFF8EDE-A732-4E52-86FC-FC7AB4E0A873}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InvalidNullRowSupportData_SLIK">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{12B657D6-FFD3-443D-8A4E-ABE92903DACA}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_EODTaskDetailLog_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4BA4C120-4E4E-4B6D-8D01-375A71039A1A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D462C06C-6D89-4B5F-84CC-5D3F0E485FE0}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Report_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">11/13/2023 9:44:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C7BEB3C-AF34-436A-AAA0-EDE4A9DDB2D9}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceSupportDataSLIK_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\From\Support data SLIK.xlsx</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Check Invalid NULL mandatory fields"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1D9B4AE1-40BA-43D6-B994-522D25C72240}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check Invalid NULL mandatory fields"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON&#xA;&#xA;IF EXISTS(SELECT TOP 1 1 FROM STG_Support_Data_SLIK &#xA; WHERE Kondisi_Kode IS NULL OR Kondisi_Tanggal IS NULL)&#xA;BEGIN&#xA; SELECT 1 AS InvalidNullRowSupportData_SLIK &#xA;&#xA; TRUNCATE TABLE STG_Support_Data_SLIK;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;SELECT 0 ASInvalidNullRowSupportData_SLIK &#xA;END&#xA;&#xA;&#xA;"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="InvalidNullRowSupportData_SLIK"
+            SQLTask:DtsVariableName="User::InvalidNullRowSupportData_SLIK" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SP Report Monitoring"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{46E32585-1C9B-4963-BAAB-5012AA3DF798}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SP Report Monitoring"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+          SQLTask:SqlStatementSource="exec usp_UpdateReportMonitoringStatus 'SDS', 'Uploaded', 'In Progress'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Generate Data From Excel File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{97EBCD7E-5E59-42B1-B879-646F7DE0E8AE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Generate Data From Excel File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Generate Data From Excel File\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F1]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F1"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F2"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F3]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F3"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F4]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F4"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F5]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F5"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F6]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F6"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F7]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F7"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F8]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F9]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F9"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F10]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F10"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F11]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F11"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F12]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F12"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F13]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F13"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F14]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F14"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F15]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F15"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F16]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F16"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F17]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F17"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F18]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F18"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F19]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F19"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F20]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F20"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F21]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="F21"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Derived Column 1]"
+                      cachedDataType="date"
+                      cachedName="Derived Column 1"
+                      lineageId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]"
+                      name="Copy of F1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]"
+                      name="Copy of F2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]"
+                      name="Copy of F3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]"
+                      name="Copy of F4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]"
+                      name="Copy of F5"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]"
+                      name="Copy of F6"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]"
+                      name="Copy of F7"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]"
+                      name="Copy of F8"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]"
+                      name="Copy of F9"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]"
+                      name="Copy of F10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]"
+                      name="Copy of F11"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]"
+                      name="Copy of F12"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]"
+                      name="Copy of F13"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]"
+                      name="Copy of F14"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]"
+                      name="Copy of F15"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]"
+                      name="Copy of F16"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]"
+                      name="Copy of F17"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]"
+                      name="Copy of F18"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]"
+                      name="Copy of F19"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]"
+                      name="Copy of F20"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]"
+                      name="Copy of F21"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Derived Column 1]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Derived Column 1]"
+                      name="Copy of Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generate Data From Excel File\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output].Columns[Derived Column 1]"
+                      name="Derived Column 1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Report_Date]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Report_Date]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generate Data From Excel File\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [SHEET 1$A7:U]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generate Data From Excel File\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]"
+                      name="F1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]"
+                      name="F2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F3]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]"
+                      name="F3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F4]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]"
+                      name="F4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]"
+                      name="F5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      name="F6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]"
+                      name="F7"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F8]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]"
+                      name="F8"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F9]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]"
+                      name="F9"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      name="F10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]"
+                      name="F11"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]"
+                      name="F12"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]"
+                      name="F13"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F14]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]"
+                      name="F14"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]"
+                      name="F15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]"
+                      name="F16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]"
+                      name="F17"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]"
+                      name="F18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]"
+                      name="F19"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]"
+                      name="F20"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]"
+                      name="F21"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
+                      dataType="wstr"
+                      length="255"
+                      name="F1" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F2]"
+                      dataType="wstr"
+                      length="255"
+                      name="F2" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F3]"
+                      dataType="wstr"
+                      length="255"
+                      name="F3" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F4]"
+                      dataType="wstr"
+                      length="255"
+                      name="F4" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
+                      dataType="r8"
+                      name="F5" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
+                      dataType="date"
+                      name="F6" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      name="F7" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F8]"
+                      dataType="date"
+                      name="F8" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F9]"
+                      dataType="r8"
+                      name="F9" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
+                      dataType="wstr"
+                      length="255"
+                      name="F10" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
+                      dataType="r8"
+                      name="F11" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
+                      dataType="wstr"
+                      length="255"
+                      name="F12" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
+                      dataType="wstr"
+                      length="255"
+                      name="F13" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F14]"
+                      dataType="wstr"
+                      length="255"
+                      name="F14" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
+                      dataType="wstr"
+                      length="255"
+                      name="F15" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
+                      dataType="date"
+                      name="F16" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
+                      dataType="date"
+                      name="F17" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
+                      dataType="r8"
+                      name="F18" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
+                      dataType="date"
+                      name="F19" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
+                      dataType="wstr"
+                      length="255"
+                      name="F20" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
+                      dataType="r8"
+                      name="F21" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F1]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F1]"
+                      name="F1" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F2]"
+                      name="F2" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F3]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F3]"
+                      name="F3" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F4]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F4]"
+                      name="F4" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F5]"
+                      dataType="r8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F5]"
+                      name="F5" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      dataType="date"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F6]"
+                      name="F6" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F7]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F7]"
+                      name="F7" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F8]"
+                      dataType="date"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F8]"
+                      name="F8" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F9]"
+                      dataType="r8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F9]"
+                      name="F9" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F10]"
+                      name="F10" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F11]"
+                      dataType="r8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F11]"
+                      name="F11" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F12]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F12]"
+                      name="F12" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F13]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F13]"
+                      name="F13" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F14]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F14]"
+                      name="F14" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F15]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F15]"
+                      name="F15" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F16]"
+                      dataType="date"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F16]"
+                      name="F16" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F17]"
+                      dataType="date"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F17]"
+                      name="F17" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F18]"
+                      dataType="r8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F18]"
+                      name="F18" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F19]"
+                      dataType="date"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F19]"
+                      name="F19" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F20]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F20]"
+                      name="F20" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F21]"
+                      dataType="r8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[F21]"
+                      name="F21" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Generate Data From Excel File\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_Support_Data_SLIK]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Generate Data From Excel File\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ANZOneReportingSLIK]"
+                  connectionManagerRefId="Package.ConnectionManagers[ANZOneReportingSLIK]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F1"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CIF]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F2"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Link_LBU]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F3"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[No_Rek]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F4]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F4"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F5]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F5"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kolektibilitas]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F6]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F6"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Tanggal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F7]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F7"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Code]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F8]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F8"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Tanggal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F9]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F9"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Nominal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F10]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F10"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Frekuensi]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F11]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F11"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Intra]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F12]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F12"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Ekstra]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F13]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F13"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Frekuensi]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F14]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F14"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Denda]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F15]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F15"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Kode]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F16]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F16"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Tanggal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F17]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F17"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Tanggal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F18]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F18"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Ke]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F19]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F19"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Awal]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F20]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F20"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Cara]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F21]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of F21"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPD]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]" />
+                    <inputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Derived Column 1]"
+                      cachedDataType="date"
+                      cachedName="Copy of Derived Column 1"
+                      externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Report_Date]"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Derived Column 1]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NoID]"
+                      dataType="i8"
+                      name="NoID" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Link_LBU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Link_LBU" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[No_Rek]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="No_Rek" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CUSTOMER_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kolektibilitas]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Kolektibilitas" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Tanggal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Macet_Tanggal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Macet_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Tanggal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Pokok_Tanggal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Nominal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Pokok_Nominal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Frekuensi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Pokok_Frekuensi" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Intra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Bunga_Intra" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Ekstra]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Bunga_Ekstra" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Frekuensi]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Tunggakan_Bunga_Frekuensi" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Denda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Denda" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Kode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Kondisi_Kode" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Tanggal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Kondisi_Tanggal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Tanggal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Restrukturisasi_Tanggal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Ke]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Restrukturisasi_Ke" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Awal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Restrukturisasi_Awal" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Cara]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Restrukturisasi_Cara" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="DPD" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastUpdateBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastUpdateBy" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ApprovedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastUpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="LastUpdateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovedDate]"
+                      dataType="dbTimeStamp"
+                      name="ApprovedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Alternateby]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Alternateby" />
+                    <externalMetadataColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Report_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Report_Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Generate Data From Excel File\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Generate Data From Excel File\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Generate Data From Excel File.Paths[Data Conversion Output]"
+              endId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Generate Data From Excel File.Paths[Derived Column Output]"
+              endId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Generate Data From Excel File.Paths[Excel Source Output]"
+              endId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
+              name="Excel Source Output"
+              startId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Report Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2CEF0C89-D1AF-4511-BCB0-9AB6FB4598CF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Report Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+          SQLTask:SqlStatementSource="SELECT EOMONTH(DATEADD(MONTH, -1, GETDATE())) AS Report_Date"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Report_Date"
+            SQLTask:DtsVariableName="User::Report_Date" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move File After Insert"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{5FE7370E-EA69-4918-9C15-0C7F3EE03B25}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move File After Insert"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::SourceSupportDataSLIK_ShareFolder"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::DestSupportDataSLIK_ShareFolder"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Raise Error Null"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{1EC379F8-9635-4788-BF84-72EC72F79490}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Raise Error Null"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_b8c426b8288a431aade09975e8c53435"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::InvalidNullRowSupportData_SLIK">
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Settings.get_Default():ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Sett" +
+    "ings")]
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ST_b8c426b8288a431aade09975e8c53435.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F444D1B-CB9A-46C3-B8B5-8CD67D45DB98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_2e7c31ec5a5449c699470f8a4a80c153</RootNamespace>
+    <AssemblyName>ST_b8c426b8288a431aade09975e8c53435</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+		{
+            // TODO: Add your code here
+            int InvalidNullRowSupportData_SLIK = Convert.ToInt32(Dts.Variables["InvalidNullRowSupportData_SLIK"].Value);
+            int invalidValue = InvalidNullRowSupportData_SLIK;
+            if (invalidValue > 0)
+            {
+                Dts.TaskResult = (int)ScriptResults.Failure;
+                Dts.Events.FireError(-1, "Main()", "Some columns don't allow null and must have a value. Please review the source data file before upload.", "", -1);
+            }
+            else
+                Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_b8c426b8288a431aade09975e8c53435</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_b8c426b8288a431aade09975e8c53435</msb:DisplayName>
+    <msb:ProjectId>{DD642698-90AB-4360-8022-F9B991C62C8F}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_b8c426b8288a431aade09975e8c53435.csproj" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+    <msb:File Include="ScriptMain.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_b8c426b8288a431aade09975e8c53435.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAEkSW2UAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAJi8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANQuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAALA8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAI
+LwAAAAAAAEgAAAACAAUAICEAAPwMAAABAAAAAAAAABwuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBgBeAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKKBQAAAoWMS8CKBAAAAoXbxUAAAoCKBAAAApvFgAAChVyPwAAcHJNAABwchwBAHAVbxcAAAom
+KgIoEAAAChZvFQAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAELR5yHgEAcNADAAACKBoAAApvGwAA
+CnMcAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoHQAACioucwgAAAaAAwAA
+BCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADQAwAAI34AADwEAACwBQAAI1N0
+cmluZ3MAAAAA7AkAAJABAAAjVVMAfAsAABAAAAAjR1VJRAAAAIwLAABwAQAAI0Jsb2IAAAAAAAAA
+AgAAAVcdoAEJAwAAAPoBMwAWAAABAAAAHwAAAAUAAAAGAAAACQAAAAEAAAAdAAAAAgAAABAAAAAC
+AAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAACYAwEAAAAAAAYAUQKGBAYA4AKGBAYAnQFzBA8A
++gQAAAYAygEWBAYANAIWBAYAFQIWBAYAxwIWBAYAcQIWBAYAigIWBAYA4QEWBAYA/AEOAwoApQJH
+AwoAHAFHAwYA0APJAwYAgAFzBAYAeAXJAwYAOASmBAYAKAQBBA4AUAGCAw4AsQGCAw4AOAHsAwYA
+ZQGGBAoAcANHAxIAPAXHABIAmgDHAAYAmgXJAwoASARHAwYA5wDJAwYAowDJAwYApgUWBAAAAABR
+AAAAAAABAAEAAQAQAOEDCQA5AAEAAQAAABAArQQJBUUAAQADAAABEABGBQkFWQADAAcAAwEAAF8F
+AAA9AAQACgARANUDcQARAAwBdQARAIoAeQAGBnkAfQBWgE8FgABWgOwAgABQIAAAAACGAOcDBgAB
+ALogAAAAAIYYZgQGAAEAwiAAAAAAgxhmBAYAAQDKIAAAAACTCDQEhAABAPYgAAAAAJMI9ACJAAEA
+/SAAAAAAkwgAAY4AAQAFIQAAAACWCH8FlAACAAwhAAAAAIYYZgQGAAIAFCEAAAAAkRhsBJkAAgAA
+AAEACAMJAGYEAQARAGYEBgAZAGYECgApAGYEEAAxAGYEEAA5AGYEEABBAGYEEABJAGYEEABRAGYE
+EABZAGYEEABhAGYEEABpAGYEBgCBAGYEBgCpAGYEFQC5AGYEBgBxAFcFGwDBADgFIADJAMADJQDR
+AP4CKwDZAAEALwDBAIsFAQDBAG0FNADhAFwEOQBxAGYEBgCJAGYEBgDpALUAQgDpAKIFSQCRAGYE
+TgCxAGYEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsABgEu
+ADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABjAGsA
+bAADAAEABAADAAAAOASdAAAAFAGiAAAAgwWnAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
+AAAAFCKcaQAAAAAAAC0AAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
+BAAAAAAAAAAAAAAAVQDJAwAAAAAPAAAAAAAAAAAAAABeAFoAAAAAAAAAAAABAAAAtwQAAAUAAgAA
+AAAAAFRvSW50MzIAU1RfMmU3YzMxZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAU1RfYjhjNDI2
+YjgyODhhNDMxYWFkZTA5OTc1ZThjNTM0MzUAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5N
+YW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAZGVmYXVsdEluc3RhbmNlAFZhcmlhYmxlAFJ1bnRp
+bWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1
+bnRpbWUAVHlwZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVy
+ZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRp
+dG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25V
+c2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJp
+YnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRh
+cmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNz
+ZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRl
+AEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lT
+U2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1
+bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3Fs
+U2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21w
+b25lbnRNb2RlbABTVF9iOGM0MjZiODI4OGE0MzFhYWRlMDk5NzVlOGM1MzQzNS5kbGwAZ2V0X0l0
+ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlv
+bgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBDdWx0dXJlSW5mbwBnZXRf
+UmVzb3VyY2VNYW5hZ2VyAEV2ZW50c09iamVjdFdyYXBwZXIARmlyZUVycm9yAC5jdG9yAC5jY3Rv
+cgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0
+ZW0uUmVzb3VyY2VzAFNUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzLlByb3BlcnRp
+ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8yZTdjMzFlYzVhNTQ0OWM2
+OTk0NzBmOGE0YTgwYzE1My5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2Vz
+cwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
+X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAAA9SQBuAHYAYQBsAGkAZABOAHUAbABs
+AFIAbwB3AFMAdQBwAHAAbwByAHQARABhAHQAYQBfAFMATABJAEsAAA1NAGEAaQBuACgAKQAAgM1T
+AG8AbQBlACAAYwBvAGwAdQBtAG4AcwAgAGQAbwBuACcAdAAgAGEAbABsAG8AdwAgAG4AdQBsAGwA
+IABhAG4AZAAgAG0AdQBzAHQAIABoAGEAdgBlACAAYQAgAHYAYQBsAHUAZQAuACAAUABsAGUAYQBz
+AGUAIAByAGUAdgBpAGUAdwAgAHQAaABlACAAcwBvAHUAcgBjAGUAIABkAGEAdABhACAAZgBpAGwA
+ZQAgAGIAZQBmAG8AcgBlACAAdQBwAGwAbwBhAGQALgABAQBxUwBUAF8AMgBlADcAYwAzADEAZQBj
+ADUAYQA1ADQANAA5AGMANgA5ADkANAA3ADAAZgA4AGEANABhADgAMABjADEANQAzAC4AUAByAG8A
+cABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAByJ97GWkGnTbin6GQBQ6P+AAQgAQEI
+AyAAAQUgAQEREQQgAQEOBSABARFRBCAAEmEEIAASZQUgARJpHAMgABwEAAEIHAQgABJxCCAFAggO
+Dg4IBgABEnUReQQgABJ9BiACAQ4SfQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYS
+TQMGEhACBggDBhEUBAAAEkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgA
+AAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfMmU3YzMx
+ZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMwAA
+SQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIu
+TkVUIEZyYW1ld29yayA0LjcAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVz
+b3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwg
+UHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVS
+ZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA/C4AAAAAAAAAAAAAFi8AAAAgAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAgvAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAA
+AP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQCcaRQiAAABAJxpFCI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
+ADQAYQA4ADAAYwAxADUAMwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA4ADcAMgA0AC4AMgA3ADAAMwA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfAGIAOABjADQAMgA2AGIAOAAyADgAOABhADQAMwAxAGEAYQBkAGUAMAA5ADkANwA1AGUA
+OABjADUAMwA0ADMANQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8AYgA4AGMANAAyADYAYgA4ADIAOAA4AGEANAAzADEAYQBhAGQAZQAwADkA
+OQA3ADUAZQA4AGMANQAzADQAMwA1AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYA
+OABhADQAYQA4ADAAYwAxADUAMwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOAA3ADIANAAuADIANwAwADMANgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADIANAAuADIANwAwADMANgAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAoPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set 'NULL' into NULL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D38A5B3F-3707-4B4E-A0CF-80EDF599EDFB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set 'NULL' into NULL"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+          SQLTask:SqlStatementSource="UPDATE dbo.STG_Support_Data_SLIK&#xA;SET    CIF = IIF(UPPER(CIF) = 'NULL',NULL,CIF),&#xA;Link_LBU = IIF(UPPER(Link_LBU) = 'NULL',NULL,Link_LBU),&#xA;No_Rek = IIF(UPPER(No_Rek) = 'NULL',NULL,No_Rek),&#xA;CUSTOMER_NAME = IIF(UPPER(CUSTOMER_NAME) = 'NULL',NULL,CUSTOMER_NAME),&#xA;Kolektibilitas = IIF(UPPER(Kolektibilitas) = 'NULL',NULL,Kolektibilitas),&#xA;Macet_Tanggal = IIF(UPPER(Macet_Tanggal) = 'NULL',NULL,Macet_Tanggal),&#xA;Macet_Code = IIF(UPPER(Macet_Code) = 'NULL',NULL,Macet_Code),&#xA;Tunggakan_Pokok_Tanggal = IIF(UPPER(Tunggakan_Pokok_Tanggal) = 'NULL',NULL,Tunggakan_Pokok_Tanggal),&#xA;Tunggakan_Pokok_Nominal = IIF(UPPER(Tunggakan_Pokok_Nominal) = 'NULL',NULL,Tunggakan_Pokok_Nominal),&#xA;Tunggakan_Pokok_Frekuensi = IIF(UPPER(Tunggakan_Pokok_Frekuensi) = 'NULL',NULL,Tunggakan_Pokok_Frekuensi),&#xA;Tunggakan_Bunga_Intra = IIF(UPPER(Tunggakan_Bunga_Intra) = 'NULL',NULL,Tunggakan_Bunga_Intra),&#xA;Tunggakan_Bunga_Ekstra = IIF(UPPER(Tunggakan_Bunga_Ekstra) = 'NULL',NULL,Tunggakan_Bunga_Ekstra),&#xA;Tunggakan_Bunga_Frekuensi = IIF(UPPER(Tunggakan_Bunga_Frekuensi) = 'NULL',NULL,Tunggakan_Bunga_Frekuensi),&#xA;Denda = IIF(UPPER(Denda) = 'NULL',NULL,Denda),&#xA;Kondisi_Kode = IIF(UPPER(Kondisi_Kode) = 'NULL',NULL,Kondisi_Kode),&#xA;Kondisi_Tanggal = IIF(UPPER(Kondisi_Tanggal) = 'NULL',NULL,Kondisi_Tanggal),&#xA;Restrukturisasi_Tanggal = IIF(UPPER(Restrukturisasi_Tanggal) = 'NULL',NULL,Restrukturisasi_Tanggal),&#xA;Restrukturisasi_Ke = IIF(UPPER(Restrukturisasi_Ke) = 'NULL',NULL,Restrukturisasi_Ke),&#xA;Restrukturisasi_Awal = IIF(UPPER(Restrukturisasi_Awal) = 'NULL',NULL,Restrukturisasi_Awal),&#xA;Restrukturisasi_Cara = IIF(UPPER(Restrukturisasi_Cara) = 'NULL',NULL,Restrukturisasi_Cara),&#xA;DPD = IIF(UPPER(DPD) = 'NULL',NULL,DPD)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate STG_Support_Data_SLIK"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3DFDE514-3F03-4454-9190-0B4F84764469}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate STG_Support_Data_SLIK"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{953A0AE3-289A-4AF7-8823-3A527CFB0E7D}"
+          SQLTask:SqlStatementSource="Truncate table STG_Support_Data_SLIK" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{91BCA6D2-B322-4404-B7ED-F649A36A8C4C}"
+      DTS:From="Package\Truncate STG_Support_Data_SLIK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Get Report Date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8D3DBE94-B5E1-48E4-9115-5E07A6ED4D27}"
+      DTS:From="Package\Get Report Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Generate Data From Excel File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{B80E5727-59B2-4103-86CB-B98885938BD4}"
+      DTS:From="Package\Raise Error Null"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Move File After Insert" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9DCE8602-78DF-4A84-A01E-395E11B6282C}"
+      DTS:From="Package\Move File After Insert"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Execute SP Report Monitoring" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{46ED17A6-A17F-43ED-85A8-48DCD6F560F9}"
+      DTS:From="Package\Generate Data From Excel File"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Set 'NULL' into NULL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{43DC1BC9-C316-4257-9FE7-44640BFD13F1}"
+      DTS:From="Package\Check Invalid NULL mandatory fields"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Raise Error Null" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{AB611E7D-6B7B-4D64-8736-22BE2D82189A}"
+      DTS:From="Package\Set 'NULL' into NULL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Check Invalid NULL mandatory fields" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="252,42.4"
+          Id="Package\Check Invalid NULL mandatory fields"
+          TopLeft="571.924099375518,425.835468405159" />
+        <NodeLayout
+          Size="220,42.4"
+          Id="Package\Execute SP Report Monitoring"
+          TopLeft="891.028260701049,200.919117286576" />
+        <NodeLayout
+          Size="222.4,42.4"
+          Id="Package\Generate Data From Excel File"
+          TopLeft="607.343741843943,219.087501449652" />
+        <NodeLayout
+          Size="156,42.4"
+          Id="Package\Get Report Date"
+          TopLeft="656.510406945987,138.937497515604" />
+        <NodeLayout
+          Size="181.6,42.4"
+          Id="Package\Move File After Insert"
+          TopLeft="887.739569777158,322.975001487426" />
+        <NodeLayout
+          Size="152,42.4"
+          Id="Package\Raise Error Null"
+          TopLeft="903.1562362141,424.912499235489" />
+        <NodeLayout
+          Size="180,42.4"
+          Id="Package\Set 'NULL' into NULL"
+          TopLeft="603.156240684448,321.754168116319" />
+        <NodeLayout
+          Size="241.6,42.4"
+          Id="Package\Truncate STG_Support_Data_SLIK"
+          TopLeft="581.28124101041,15.1500008019805" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="701.947907677077,57.8166674686472">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.5624992689108,81.1208300469567"
+              Start="0,0"
+              End="32.5624992689108,73.6208300469567">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5604150234784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5604150234784"
+                    Point2="0,40.5604150234784"
+                    Point3="4,40.5604150234784" />
+                  <mssgle:LineSegment
+                    End="28.5624992689108,40.5604150234784" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.5624992689108,40.5604150234784"
+                    Point2="32.5624992689108,40.5604150234784"
+                    Point3="32.5624992689108,44.5604150234784" />
+                  <mssgle:LineSegment
+                    End="32.5624992689108,73.6208300469567" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="734.510406945987,181.604164182271">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.8333317687111,37.4833372673814"
+              Start="0,0"
+              End="-15.8333317687111,29.9833372673814">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7416686336907" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7416686336907"
+                    Point2="0,18.7416686336907"
+                    Point3="-4,18.7416686336907" />
+                  <mssgle:LineSegment
+                    End="-11.8333317687111,18.7416686336907" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.8333317687111,18.7416686336907"
+                    Point2="-15.8333317687111,18.7416686336907"
+                    Point3="-15.8333317687111,22.7416686336907" />
+                  <mssgle:LineSegment
+                    End="-15.8333317687111,29.9833372673814" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="978.781236328962,424.912499235489">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-59.2708310813957"
+              Start="0,0"
+              End="0,-51.7708310813957">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-51.7708310813957" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="978.406236443825,322.975001487426">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22.6220242572243,-79.3892175341835"
+              Start="0,0"
+              End="22.6220242572243,-71.8892175341835">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-35.6946087670918" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-35.6946087670918"
+                    Point2="0,-39.6946087670918"
+                    Point3="4,-39.6946087670918" />
+                  <mssgle:LineSegment
+                    End="18.6220242572243,-39.6946087670918" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.6220242572243,-39.6946087670918"
+                    Point2="22.6220242572243,-39.6946087670918"
+                    Point3="22.6220242572243,-43.6946087670918" />
+                  <mssgle:LineSegment
+                    End="22.6220242572243,-71.8892175341835" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="682.899297399499,261.754168116319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.2569432849494,60"
+              Start="0,0"
+              End="10.2569432849494,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.256837098692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.256837098692"
+                    Point2="0,24.256837098692"
+                    Point3="4,24.256837098692" />
+                  <mssgle:LineSegment
+                    End="6.25694328494944,24.256837098692" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.25694328494944,24.256837098692"
+                    Point2="10.2569432849494,24.256837098692"
+                    Point3="10.2569432849494,28.256837098692" />
+                  <mssgle:LineSegment
+                    End="10.2569432849494,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="823.924099375518,446.707317153657">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="79.2321368385819,0"
+              Start="0,0"
+              End="71.7321368385819,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="71.7321368385819,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="693.156240684448,364.420834782986">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.8988079755969,61.414633622173"
+              Start="0,0"
+              End="-35.8988079755969,53.914633622173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.6162957558066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.6162957558066"
+                    Point2="0,36.6162957558066"
+                    Point3="-4,36.6162957558066" />
+                  <mssgle:LineSegment
+                    End="-31.8988079755969,36.6162957558066" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-31.8988079755969,36.6162957558066"
+                    Point2="-35.8988079755969,36.6162957558066"
+                    Point3="-35.8988079755969,40.6162957558066" />
+                  <mssgle:LineSegment
+                    End="-35.8988079755969,53.914633622173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Generate Data From Excel File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174.666666666667,42.6666666666667"
+          Id="Package\Generate Data From Excel File\OLE DB Destination"
+          TopLeft="253.125000251457,260.950000197589" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Generate Data From Excel File\Derived Column"
+          TopLeft="473.124996973201,46.4166725362336" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Generate Data From Excel File\Data Conversion"
+          TopLeft="266.125003529713,165.499999883771" />
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\Generate Data From Excel File\Excel Source"
+          TopLeft="285.249999757856,45.7500005230307" />
+        <EdgeLayout
+          Id="Package\Generate Data From Excel File.Paths[Data Conversion Output]"
+          TopLeft="342.625001890585,208.166666550438">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.7833336471514"
+              Start="0,0"
+              End="0,45.2833336471514">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.2833336471514" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generate Data From Excel File.Paths[Excel Source Output]"
+          TopLeft="424.583333091189,67.4166698629655">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="48.5416638820122,0"
+              Start="0,0"
+              End="41.0416638820122,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="41.0416638820122,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Generate Data From Excel File.Paths[Derived Column Output]"
+          TopLeft="550.458330306535,89.0833392029003">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-205.666660110155,76.4166606808707"
+              Start="0,0"
+              End="-205.666660110155,68.9166606808707">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.2083303404354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.2083303404354"
+                    Point2="0,38.2083303404354"
+                    Point3="-4,38.2083303404354" />
+                  <mssgle:LineSegment
+                    End="-201.666660110155,38.2083303404354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-201.666660110155,38.2083303404354"
+                    Point2="-205.666660110155,38.2083303404354"
+                    Point3="-205.666660110155,42.2083303404354" />
+                  <mssgle:LineSegment
+                    End="-205.666660110155,68.9166606808707" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generate Data From Excel File\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Generate Data From Excel File\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

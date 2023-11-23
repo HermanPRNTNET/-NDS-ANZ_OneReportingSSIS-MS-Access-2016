@@ -1,0 +1,3039 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/1/2023 1:10:00 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-V2N5OE11"
+  DTS:CreatorName="LAPTOP-V2N5OE11\Herman Pranoto"
+  DTS:DTSID="{9F4A0A9C-ED6A-49E4-BF42-C238CE51D5C6}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STG_PengurusPemilik_ShareFolder"
+  DTS:PackageType="5"
+  DTS:VersionBuild="105"
+  DTS:VersionGUID="{D3B8AF23-B38E-4835-9B3C-37273D477B0C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ANZOneReportingSLIK]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+      DTS:ObjectName="ANZOneReportingSLIK">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com,3313;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-STG_PengurusPemilik_ShareFolder-{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}ndsantasena.southeastasia.cloudapp.azure.com,3313.A;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{1C044620-4924-43AD-B891-D88E1263A566}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ExcelFilePath">@[User::SourceFolderPengurusPemilik_ShareFolder]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\From\Pengurus Pemilik-102023.XLSX;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;DestFolderPengurusPemilik_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{1B9082C4-C822-4D44-9ECB-9C49CDC1E923}"
+      DTS:ObjectName="DestFolderPengurusPemilik_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;FileNamePengurusPemilik_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6688BC46-D423-4D65-94F5-37C2F62EE6EF}"
+      DTS:ObjectName="FileNamePengurusPemilik_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;SourceFolderPengurusPemilik_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{83D256EB-17A4-4ED3-A3A2-AA0CFB160646}"
+      DTS:ObjectName="SourceFolderPengurusPemilik_ShareFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ANZOneReportingSLIK&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;FolderPathPengurusPemilik_ShareFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{5EA76E16-45DA-4D48-BDD8-73B94ACB3977}"
+      DTS:ObjectName="FolderPathPengurusPemilik_ShareFolder" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FEF58481-1192-4359-AFA6-279FD26EA8E8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestFolderPengurusPemilik_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\Copied Folder\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{97B21E62-6827-4C2C-BE71-8557FDF957D2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileNamePengurusPemilik_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">Pengurus Pemilik-102023.XLSX</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C596FB60-ED0D-4F28-A933-5A4AD21B35E3}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FolderPathPengurusPemilik_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\From\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D26FDC59-F5B3-4C78-9045-0C67502C42C5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="InvalidNullRowPengurusPemilik">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{5D0AE5FE-E3E3-4CE2-BECC-C4FE78ED6802}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_EODTaskDetailLog_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1DBB8EFD-88EF-4D77-BDFC-0CC7E25926C7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_ID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{B1B09E86-4BED-48D4-9919-B58D31113992}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Report_Date">
+      <DTS:VariableValue
+        DTS:DataType="7">11/14/2023 11:05:00 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF69B20D-0778-41C1-A696-A68E8CB3F0C7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SourceFolderPengurusPemilik_ShareFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\From\Pengurus Pemilik-102023.XLSX</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AuditTrailEOD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{E1F64E4F-7F67-4203-AB4F-0FD6DA96A2C2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AuditTrailEOD"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="UPDATE EODTaskDetailLog  SET executionID = REPLACE( REPLACE( ?,'{',''),'}','')WHERE PK_EODTaskDetailLog_ID=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="$Package::PK_EODTaskDetailLog_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Check Invalid NULL mandatory fields"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C8D9364E-02C1-4E7B-832F-FC84D6670E6C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Check Invalid NULL mandatory fields"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON&#xA;&#xA;IF EXISTS(SELECT TOP 1 1 FROM STG_PengurusPemilik_Sheet1 &#xA;&#x9;WHERE Card_No IS NULL OR CIF IS NULL OR Type_ID_Card IS NULL OR Person_Name IS NULL OR Gender IS NULL&#xA;&#x9;OR Ap_Address IS NULL OR Title_Name IS NULL OR Percetage_Ownership IS NULL)&#xA;BEGIN&#xA;SELECT 1 AS InvalidNullRowPengurusPemilik &#xA; TRUNCATE TABLE STG_PengurusPemilik_Sheet1;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;SELECT 0 AS InvalidNullRowPengurusPemilik &#xA;END"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="InvalidNullRowPengurusPemilik"
+            SQLTask:DtsVariableName="User::InvalidNullRowPengurusPemilik" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Get Report Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3B9E89A1-D651-4559-B8F6-E620BA205A85}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get Report Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="SELECT EOMONTH(DATEADD(MONTH, -1, GETDATE())) AS Report_Date"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Report_Date"
+            SQLTask:DtsVariableName="User::Report_Date" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Excel To STG_PengurusPemilik_Sheet1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{79ED6155-CE75-476B-A500-0DA63CF6DB97}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Excel To STG_PengurusPemilik_Sheet1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[No#]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="No#"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[No#]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[CIF]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CIF"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[CIF]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Kyc Customer Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Kyc Customer Name"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Kyc Customer Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Person Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Person Name"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Person Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Title Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Title Name"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Title Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Total Ownership]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Total Ownership"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Total Ownership]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Percetage Ownership]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Percetage Ownership"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Percetage Ownership]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Ap Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ap Address"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Address]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Category ID Card]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Category ID Card"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Type ID Card]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type ID Card"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Card Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Card Name"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Card No]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Card No"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Category ID Card 2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Category ID Card 2"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Type ID Card 2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Type ID Card 2"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Card Name 2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Card Name 2"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Card No 2]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Card No 2"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Gender"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Country of Domicile]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Country of Domicile"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country of Domicile]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Report_Date]"
+                      cachedDataType="date"
+                      cachedName="Report_Date"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of No#]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of No#]"
+                      name="Copy of No#"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[No#]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]"
+                      name="Copy of CIF"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[CIF]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kyc Customer Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kyc Customer Name]"
+                      name="Copy of Kyc Customer Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Kyc Customer Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Person Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Person Name]"
+                      name="Copy of Person Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Person Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title Name]"
+                      name="Copy of Title Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Title Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total Ownership]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total Ownership]"
+                      name="Copy of Total Ownership"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Total Ownership]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Percetage Ownership]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Percetage Ownership]"
+                      name="Copy of Percetage Ownership"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Percetage Ownership]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ap Address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ap Address]"
+                      name="Copy of Ap Address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Address]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]"
+                      name="Copy of Country"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card]"
+                      name="Copy of Category ID Card"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card]"
+                      name="Copy of Type ID Card"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name]"
+                      name="Copy of Card Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No]"
+                      name="Copy of Card No"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card 2]"
+                      name="Copy of Category ID Card 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card 2]"
+                      name="Copy of Type ID Card 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name 2]"
+                      name="Copy of Card Name 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No 2]"
+                      name="Copy of Card No 2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No 2]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Gender]"
+                      name="Copy of Gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Gender]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country of Domicile]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country of Domicile]"
+                      name="Copy of Country of Domicile"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country of Domicile]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Report_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Report_Date]"
+                      name="Copy of Report_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]"
+                      name="Report_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">@[User::Report_Date]</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">@[User::Report_Date]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Excel Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Excel Source"
+              name="Excel Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM     [Sheet1$A4:T]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mapping from parameters in the SQL command to variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output]"
+                  name="Excel Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[No#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[No#]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[No#]"
+                      name="No#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[CIF]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[CIF]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[CIF]"
+                      name="CIF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Kyc Customer Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Kyc Customer Name]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Kyc Customer Name]"
+                      name="Kyc Customer Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Unique Id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ap Unique Id]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Unique Id]"
+                      name="Ap Unique Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Person Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Person Name]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Person Name]"
+                      name="Person Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Title Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Title Name]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Title Name]"
+                      name="Title Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Total Ownership]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total Ownership]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Total Ownership]"
+                      name="Total Ownership"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Percetage Ownership]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Percetage Ownership]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Percetage Ownership]"
+                      name="Percetage Ownership"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ap Address]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Ap Address]"
+                      name="Ap Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category ID Card]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card]"
+                      name="Category ID Card"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type ID Card]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card]"
+                      name="Type ID Card"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card Name]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name]"
+                      name="Card Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card No]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No]"
+                      name="Card No"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category ID Card 2]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Category ID Card 2]"
+                      name="Category ID Card 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type ID Card 2]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Type ID Card 2]"
+                      name="Type ID Card 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card Name 2]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card Name 2]"
+                      name="Card Name 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No 2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card No 2]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Card No 2]"
+                      name="Card No 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Gender]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country of Domicile]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country of Domicile]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Country of Domicile]"
+                      name="Country of Domicile"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[No#]"
+                      dataType="wstr"
+                      length="255"
+                      name="No#" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[CIF]"
+                      dataType="wstr"
+                      length="255"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Kyc Customer Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Kyc Customer Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ap Unique Id]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ap Unique Id" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Person Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Person Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Title Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Title Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Total Ownership]"
+                      dataType="wstr"
+                      length="255"
+                      name="Total Ownership" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Percetage Ownership]"
+                      dataType="wstr"
+                      length="255"
+                      name="Percetage Ownership" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Ap Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ap Address" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category ID Card]"
+                      dataType="wstr"
+                      length="255"
+                      name="Category ID Card" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type ID Card]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type ID Card" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card No]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card No" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Category ID Card 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Category ID Card 2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Type ID Card 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Type ID Card 2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card Name 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card Name 2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Card No 2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card No 2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Country of Domicile]"
+                      dataType="wstr"
+                      length="255"
+                      name="Country of Domicile" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output]"
+                  isErrorOut="true"
+                  name="Excel Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[No#]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[No#]"
+                      name="No#" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[CIF]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[CIF]"
+                      name="CIF" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Kyc Customer Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Kyc Customer Name]"
+                      name="Kyc Customer Name" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Ap Unique Id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Ap Unique Id]"
+                      name="Ap Unique Id" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Person Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Person Name]"
+                      name="Person Name" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Title Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Title Name]"
+                      name="Title Name" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Total Ownership]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Total Ownership]"
+                      name="Total Ownership" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Percetage Ownership]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Percetage Ownership]"
+                      name="Percetage Ownership" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Ap Address]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Ap Address]"
+                      name="Ap Address" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Country]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Category ID Card]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Category ID Card]"
+                      name="Category ID Card" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Type ID Card]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Type ID Card]"
+                      name="Type ID Card" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card Name]"
+                      name="Card Name" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card No]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card No]"
+                      name="Card No" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Category ID Card 2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Category ID Card 2]"
+                      name="Category ID Card 2" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Type ID Card 2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Type ID Card 2]"
+                      name="Type ID Card 2" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card Name 2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card Name 2]"
+                      name="Card Name 2" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card No 2]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Card No 2]"
+                      name="Card No 2" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Gender]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Country of Domicile]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Country of Domicile]"
+                      name="Country of Domicile" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_PengurusPemilik_Sheet1]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[ANZOneReportingSLIK]"
+                  connectionManagerRefId="Package.ConnectionManagers[ANZOneReportingSLIK]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CIF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of CIF"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CIF]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Kyc Customer Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Kyc Customer Name"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kyc_Customer_Name]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kyc Customer Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Person Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Person Name"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Person_Name]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Person Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Country of Domicile]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Country of Domicile"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_of_Domicile]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country of Domicile]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Gender"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Gender]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card No 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Card No 2"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No_2]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card Name 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Card Name 2"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Name_2]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Type ID Card 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Type ID Card 2"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type_ID_Card_2]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Category ID Card 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Category ID Card 2"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category_ID_Card_2]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card 2]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Card No"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card No]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Card Name"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Name]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Type ID Card]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Type ID Card"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type_ID_Card]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Type ID Card]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Category ID Card]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Category ID Card"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category_ID_Card]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Category ID Card]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Country"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Country]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Ap Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Ap Address"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ap_Address]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ap Address]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Percetage Ownership]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Percetage Ownership"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Percetage_Ownership]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Percetage Ownership]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Total Ownership]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Total Ownership"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Ownership]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total Ownership]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Title Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Copy of Title Name"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title_Name]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Title Name]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Report_Date]"
+                      cachedDataType="date"
+                      cachedName="Copy of Report_Date"
+                      externalMetadataColumnId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Report_Date]"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Report_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Active]"
+                      dataType="bool"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CreatedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastUpdateBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LastUpdateBy" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovedBy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ApprovedBy" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastUpdateDate]"
+                      dataType="dbTimeStamp"
+                      name="LastUpdateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ApprovedDate]"
+                      dataType="dbTimeStamp"
+                      name="ApprovedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Alternateby]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Alternateby" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CIF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="CIF" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kyc_Customer_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Kyc_Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Person_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Person_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Title_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Ownership]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Total_Ownership" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Percetage_Ownership]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Percetage_Ownership" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ap_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Ap_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category_ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Category_ID_Card" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type_ID_Card]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Type_ID_Card" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Card_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Card_No" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Category_ID_Card_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Category_ID_Card_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Type_ID_Card_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Type_ID_Card_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Name_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Card_Name_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Card_No_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Country_of_Domicile]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Country_of_Domicile" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Report_Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Report_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NoID]"
+                      dataType="i8"
+                      name="NoID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Data Conversion Output]"
+              endId="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Derived Column Output]"
+              endId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Excel Source Output]"
+              endId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column.Inputs[Derived Column Input]"
+              name="Excel Source Output"
+              startId="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source.Outputs[Excel Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move File After Insert"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{D1B59866-FFB4-4166-9E91-E8D0F8B745D9}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move File After Insert"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="MoveFile"
+          TaskOverwriteDestFile="True"
+          TaskSourcePath="User::SourceFolderPengurusPemilik_ShareFolder"
+          TaskIsSourceVariable="True"
+          TaskDestinationPath="User::DestFolderPengurusPemilik_ShareFolder"
+          TaskIsDestinationVariable="True" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Raise Error Null"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{D416B7AC-514C-49AE-9288-177AC626281D}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Raise Error Null"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_d13a8193260849cfab56449ed57bc3b6"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="CSharp"
+          ReadOnlyVariables="User::InvalidNullRowPengurusPemilik">
+          <ProjectItem
+            Name="Properties\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="ST_d13a8193260849cfab56449ed57bc3b6.csproj"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2F444D1B-CB9A-46C3-B8B5-8CD67D45DB98}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ST_2e7c31ec5a5449c699470f8a4a80c153</RootNamespace>
+    <AssemblyName>ST_d13a8193260849cfab56449ed57bc3b6</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=15.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ScriptMain.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a C# project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST150</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Settings.get_Default():ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Sett" +
+    "ings")]
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+		{
+            // TODO: Add your code here
+            int InvalidNullRowPengurusPemilik = Convert.ToInt32(Dts.Variables["InvalidNullRowPengurusPemilik"].Value);
+            int invalidValue = InvalidNullRowPengurusPemilik;
+            if (invalidValue > 0)
+            {
+                Dts.TaskResult = (int)ScriptResults.Failure;
+                Dts.Events.FireError(-1, "Main()", "Some columns don't allow null and must have a value. Please review the source data file before upload.", "", -1);
+            }
+            else
+                Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>ST_d13a8193260849cfab56449ed57bc3b6</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>ST_d13a8193260849cfab56449ed57bc3b6</msb:DisplayName>
+    <msb:ProjectId>{E4A84127-9FC2-41C8-9A64-10CF40CB2E98}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="ST_d13a8193260849cfab56449ed57bc3b6.csproj" />
+    <msb:File Include="ScriptMain.cs" />
+    <msb:File Include="Properties\Settings.settings" />
+    <msb:File Include="Properties\AssemblyInfo.cs" />
+    <msb:File Include="Properties\Resources.resx" />
+    <msb:File Include="Properties\Resources.Designer.cs" />
+    <msb:File Include="Properties\Settings.Designer.cs" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="Properties\Resources.Designer.cs"
+            Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ST_2e7c31ec5a5449c699470f8a4a80c153.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}]]></ProjectItem>
+          <BinaryItem
+            Name="ST_d13a8193260849cfab56449ed57bc3b6.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAI06V2UAAAAAAAAAAOAAIiALATAAABAAAAAIAAAAAAAAJi8A
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANQuAABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAALA8AAAAgAAAAEAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAASAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAI
+LwAAAAAAAEgAAAACAAUAICEAAPwMAAABAAAAAAAAABwuAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBgBeAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
+AAAKKBQAAAoWMS8CKBAAAAoXbxUAAAoCKBAAAApvFgAAChVyPQAAcHJLAABwchoBAHAVbxcAAAom
+KgIoEAAAChZvFQAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAELR5yHAEAcNADAAACKBoAAApvGwAA
+CnMcAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoHQAACioucwgAAAaAAwAA
+BCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADQAwAAI34AADwEAACwBQAAI1N0
+cmluZ3MAAAAA7AkAAJABAAAjVVMAfAsAABAAAAAjR1VJRAAAAIwLAABwAQAAI0Jsb2IAAAAAAAAA
+AgAAAVcdoAEJAwAAAPoBMwAWAAABAAAAHwAAAAUAAAAGAAAACQAAAAEAAAAdAAAAAgAAABAAAAAC
+AAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAACYAwEAAAAAAAYAUQKGBAYA4AKGBAYAnQFzBA8A
++gQAAAYAygEWBAYANAIWBAYAFQIWBAYAxwIWBAYAcQIWBAYAigIWBAYA4QEWBAYA/AEOAwoApQJH
+AwoAHAFHAwYA0APJAwYAgAFzBAYAeAXJAwYAOASmBAYAKAQBBA4AUAGCAw4AsQGCAw4AOAHsAwYA
+ZQGGBAoAcANHAxIAPAXHABIAmgDHAAYAmgXJAwoASARHAwYA5wDJAwYAowDJAwYApgUWBAAAAABR
+AAAAAAABAAEAAQAQAOEDCQA5AAEAAQAAABAArQQJBUUAAQADAAABEABGBQkFWQADAAcAAwEAAF8F
+AAA9AAQACgARANUDcQARAAwBdQARAIoAeQAGBnkAfQBWgE8FgABWgOwAgABQIAAAAACGAOcDBgAB
+ALogAAAAAIYYZgQGAAEAwiAAAAAAgxhmBAYAAQDKIAAAAACTCDQEhAABAPYgAAAAAJMI9ACJAAEA
+/SAAAAAAkwgAAY4AAQAFIQAAAACWCH8FlAACAAwhAAAAAIYYZgQGAAIAFCEAAAAAkRhsBJkAAgAA
+AAEACAMJAGYEAQARAGYEBgAZAGYECgApAGYEEAAxAGYEEAA5AGYEEABBAGYEEABJAGYEEABRAGYE
+EABZAGYEEABhAGYEEABpAGYEBgCBAGYEBgCpAGYEFQC5AGYEBgBxAFcFGwDBADgFIADJAMADJQDR
+AP4CKwDZAAEALwDBAIsFAQDBAG0FNADhAFwEOQBxAGYEBgCJAGYEBgDpALUAQgDpAKIFSQCRAGYE
+TgCxAGYEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsABgEu
+ADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABjAGsA
+bAADAAEABAADAAAAOASdAAAAFAGiAAAAgwWnAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
+AAAAESL+dwAAAAAAAC0AAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
+BAAAAAAAAAAAAAAAVQDJAwAAAAAPAAAAAAAAAAAAAABeAFoAAAAAAAAAAAABAAAAtwQAAAUAAgAA
+AAAAAFRvSW50MzIAU1RfMmU3YzMxZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAU1RfZDEzYTgx
+OTMyNjA4NDljZmFiNTY0NDllZDU3YmMzYjYAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5N
+YW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAZGVmYXVsdEluc3RhbmNlAFZhcmlhYmxlAFJ1bnRp
+bWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1
+bnRpbWUAVHlwZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3VsdHVy
+ZQBWU1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRp
+dG9yQnJvd3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25V
+c2VyQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJp
+YnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRh
+cmdldEZyYW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNz
+ZW1ibHlEZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRl
+AEFzc2VtYmx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lT
+U2NyaXB0VGFza0VudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1
+bnRpbWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAGdldF9WYWx1ZQB2YWx1ZQBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3Fs
+U2VydmVyLkR0cy5UYXNrcy5TY3JpcHRUYXNrAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21w
+b25lbnRNb2RlbABTVF9kMTNhODE5MzI2MDg0OWNmYWI1NjQ0OWVkNTdiYzNiNi5kbGwAZ2V0X0l0
+ZW0AU3lzdGVtAEVudW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlv
+bgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBDdWx0dXJlSW5mbwBnZXRf
+UmVzb3VyY2VNYW5hZ2VyAEV2ZW50c09iamVjdFdyYXBwZXIARmlyZUVycm9yAC5jdG9yAC5jY3Rv
+cgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lzdGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0
+ZW0uUmVzb3VyY2VzAFNUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzLlByb3BlcnRp
+ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8yZTdjMzFlYzVhNTQ0OWM2
+OTk0NzBmOGE0YTgwYzE1My5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2Vz
+cwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
+X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAAA7SQBuAHYAYQBsAGkAZABOAHUAbABs
+AFIAbwB3AFAAZQBuAGcAdQByAHUAcwBQAGUAbQBpAGwAaQBrAAANTQBhAGkAbgAoACkAAIDNUwBv
+AG0AZQAgAGMAbwBsAHUAbQBuAHMAIABkAG8AbgAnAHQAIABhAGwAbABvAHcAIABuAHUAbABsACAA
+YQBuAGQAIABtAHUAcwB0ACAAaABhAHYAZQAgAGEAIAB2AGEAbAB1AGUALgAgAFAAbABlAGEAcwBl
+ACAAcgBlAHYAaQBlAHcAIAB0AGgAZQAgAHMAbwB1AHIAYwBlACAAZABhAHQAYQAgAGYAaQBsAGUA
+IABiAGUAZgBvAHIAZQAgAHUAcABsAG8AYQBkAC4AAQEAcVMAVABfADIAZQA3AGMAMwAxAGUAYwA1
+AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABhADQAYQA4ADAAYwAxADUAMwAuAFAAcgBvAHAA
+ZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAAAABtO33IAsE5RpzZid1o0C1oAAQgAQEI
+AyAAAQUgAQEREQQgAQEOBSABARFRBCAAEmEEIAASZQUgARJpHAMgABwEAAEIHAQgABJxCCAFAggO
+Dg4IBgABEnUReQQgABJ9BiACAQ4SfQi3elxWGTTgiQiJhF3NgIDMkQQAAAAABAEAAAADBhJJAwYS
+TQMGEhACBggDBhEUBAAAEkkEAAASTQUAAQESTQQAABIQAwAAAQQIABJJBAgAEk0ECAASEAgBAAgA
+AAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU1RfMmU3YzMx
+ZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMwAA
+SQEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC43AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIu
+TkVUIEZyYW1ld29yayA0LjcAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVz
+b3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwg
+UHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVS
+ZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA/C4AAAAAAAAAAAAAFi8AAAAgAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAgvAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNjb3JlZS5kbGwAAAAA
+AP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
+AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
+AAAAAAC9BO/+AAABAAAAAQD+dxEiAAABAP53ESI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
+AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
+MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
+AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
+AAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
+ADQAYQA4ADAAYwAxADUAMwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
+LgA4ADcAMgAxAC4AMwAwADcAMQA4AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+AFMAVABfAGQAMQAzAGEAOAAxADkAMwAyADYAMAA4ADQAOQBjAGYAYQBiADUANgA0ADQAOQBlAGQA
+NQA3AGIAYwAzAGIANgAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
+AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
+cgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBu
+AGEAbQBlAAAAUwBUAF8AZAAxADMAYQA4ADEAOQAzADIANgAwADgANAA5AGMAZgBhAGIANQA2ADQA
+NAA5AGUAZAA1ADcAYgBjADMAYgA2AC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
+AGUAAAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYA
+OABhADQAYQA4ADAAYwAxADUAMwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
+ADEALgAwAC4AOAA3ADIAMQAuADMAMAA3ADEAOAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADIAMQAuADMAMAA3ADEAOAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAoPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set 'NULL' into NULL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4B04C678-0A08-4619-B06B-11D1FD80829C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set 'NULL' into NULL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="SET NOCOUNT ON &#xA;&#xA;UPDATE STG_PengurusPemilik_Sheet1&#xA;SET CIF = IIF(UPPER(CIF) = 'NULL',NULL,CIF),&#xA;Kyc_Customer_Name = IIF(UPPER(Kyc_Customer_Name) = 'NULL',NULL,Kyc_Customer_Name),&#xA;Person_Name = IIF(UPPER(Person_Name) = 'NULL',NULL,Person_Name),&#xA;Title_Name = IIF(UPPER(Title_Name) = 'NULL',NULL,Title_Name),&#xA;Total_Ownership = IIF(UPPER(Total_Ownership) = 'NULL',NULL,Total_Ownership),&#xA;Percetage_Ownership = IIF(UPPER(Percetage_Ownership) = 'NULL',NULL,Percetage_Ownership),&#xA;Ap_Address = IIF(UPPER(Ap_Address) = 'NULL',NULL,Ap_Address),&#xA;Country = IIF(UPPER(Country) = 'NULL',NULL,Country),&#xA;Category_ID_Card = IIF(UPPER(Category_ID_Card) = 'NULL',NULL,Category_ID_Card),&#xA;Type_ID_Card = IIF(UPPER(Type_ID_Card) = 'NULL',NULL,Type_ID_Card),&#xA;Card_Name = IIF(UPPER(Card_Name) = 'NULL',NULL,Card_Name),&#xA;Card_No = IIF(UPPER(Card_No) = 'NULL',NULL,Card_No),&#xA;Category_ID_Card_2 = IIF(UPPER(Category_ID_Card_2) = 'NULL',NULL,Category_ID_Card_2),&#xA;Type_ID_Card_2 = IIF(UPPER(Type_ID_Card_2) = 'NULL',NULL,Type_ID_Card_2),&#xA;Card_Name_2 = IIF(UPPER(Card_Name_2) = 'NULL',NULL,Card_Name_2),&#xA;Card_No_2 = IIF(UPPER(Card_No_2) = 'NULL',NULL,Card_No_2),&#xA;Gender = IIF(UPPER(Gender) = 'NULL',NULL,Gender),&#xA;Country_of_Domicile = IIF(UPPER(Country_of_Domicile) = 'NULL',NULL,Country_of_Domicile)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Trcuncate STG_PengurusPemilik_Sheet1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B021FE45-3C36-4232-A1AE-435F2FAAE872}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Trcuncate STG_PengurusPemilik_Sheet1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.STG_PengurusPemilik_Sheet1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Report Monitoring Status"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0CA5F2D2-B446-425B-B46C-D0DEFB871FA8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Report Monitoring Status"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{69DC6FB4-D260-4395-A60E-3BB6B38AB51B}"
+          SQLTask:SqlStatementSource="exec usp_UpdateReportMonitoringStatus 'PP', 'Uploaded', 'In Progress'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0A5AB85C-CAEB-4801-8BDF-DDFFA739F2FA}"
+      DTS:From="Package\AuditTrailEOD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Trcuncate STG_PengurusPemilik_Sheet1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B087235-520F-4189-9259-AB6ADCDB3132}"
+      DTS:From="Package\Trcuncate STG_PengurusPemilik_Sheet1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Get Report Date" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7616A2A0-BD80-4E36-9561-BBA80F168608}"
+      DTS:From="Package\Get Report Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Import Excel To STG_PengurusPemilik_Sheet1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{0A3D2EF8-1CF6-4F27-9B62-78D13C29E5B3}"
+      DTS:From="Package\Import Excel To STG_PengurusPemilik_Sheet1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Set 'NULL' into NULL" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{040F2315-A2C7-4A02-ACD1-16518FA004F8}"
+      DTS:From="Package\Move File After Insert"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Update Report Monitoring Status" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{2FDC9E28-8333-465D-9C00-D27E0BBFAE7A}"
+      DTS:From="Package\Set 'NULL' into NULL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Check Invalid NULL mandatory fields" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{153ABE64-1459-40A9-A57F-F6CF62D654DE}"
+      DTS:From="Package\Check Invalid NULL mandatory fields"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Raise Error Null" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{CFFB9178-958F-4F31-8772-C7C543266F69}"
+      DTS:From="Package\Raise Error Null"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Move File After Insert" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="207.333333333334,41.3333333333334"
+          Id="Package\AuditTrailEOD"
+          TopLeft="249.166656331056,147.186602030345" />
+        <NodeLayout
+          Size="252,42.6666666666667"
+          Id="Package\Check Invalid NULL mandatory fields"
+          TopLeft="674.541657698031,505.098505253905" />
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\Get Report Date"
+          TopLeft="268.154757125197,310.317554520084" />
+        <NodeLayout
+          Size="297.333333333334,41.3333333333334"
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1"
+          TopLeft="187.083329761827,401.848503452355" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\Move File After Insert"
+          TopLeft="785.297606562026,324.896125687971" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Raise Error Null"
+          TopLeft="846.406237387565,400.842803457712" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Set 'NULL' into NULL"
+          TopLeft="466.458325598815,503.055648147577" />
+        <NodeLayout
+          Size="271.333333333334,41.3333333333334"
+          Id="Package\Trcuncate STG_PengurusPemilik_Sheet1"
+          TopLeft="211.239286064831,234.448038181287" />
+        <NodeLayout
+          Size="233.333333333334,42.6666666666667"
+          Id="Package\Update Report Monitoring Status"
+          TopLeft="1018.39284118387,335.448508287483" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="349.86963786461,188.519935363678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9281028176088"
+              Start="0,0"
+              End="0,38.4281028176088">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4281028176088" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="346.530354928348,275.78137151462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5361830054635"
+              Start="0,0"
+              End="0,27.0361830054635">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0361830054635" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="346.154757125197,352.984221186751">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-10.4047606967038,48.8642822656045"
+              Start="0,0"
+              End="-10.4047606967038,41.3642822656045">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4321411328022" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4321411328022"
+                    Point2="0,24.4321411328022"
+                    Point3="-4,24.4321411328022" />
+                  <mssgle:LineSegment
+                    End="-6.40476069670376,24.4321411328022" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-6.40476069670376,24.4321411328022"
+                    Point2="-10.4047606967038,24.4321411328022"
+                    Point3="-10.4047606967038,28.4321411328022" />
+                  <mssgle:LineSegment
+                    End="-10.4047606967038,41.3642822656045" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="335.749996428494,443.181836785688">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218.708329170321,59.8738113618888"
+              Start="0,0"
+              End="218.708329170321,52.3738113618888">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.9369056809444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.9369056809444"
+                    Point2="0,29.9369056809444"
+                    Point3="4,29.9369056809444" />
+                  <mssgle:LineSegment
+                    End="214.708329170321,29.9369056809444" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214.708329170321,29.9369056809444"
+                    Point2="218.708329170321,29.9369056809444"
+                    Point3="218.708329170321,33.9369056809444" />
+                  <mssgle:LineSegment
+                    End="218.708329170321,52.3738113618888" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="966.630939895359,346.229459021304">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="51.7619012885148,10.5523825995121"
+              Start="0,0"
+              End="44.2619012885148,10.5523825995121">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="21.8809506442574,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="21.8809506442574,0"
+                    Point2="25.8809506442574,0"
+                    Point3="25.8809506442574,4" />
+                  <mssgle:LineSegment
+                    End="25.8809506442574,6.5523825995121" />
+                  <mssgle:CubicBezierSegment
+                    Point1="25.8809506442574,6.5523825995121"
+                    Point2="25.8809506442574,10.5523825995121"
+                    Point3="29.8809506442574,10.5523825995121" />
+                  <mssgle:LineSegment
+                    End="44.2619012885148,10.5523825995121" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="642.458325598815,525.410410034074">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.0833320992156,0"
+              Start="0,0"
+              End="24.5833320992156,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="24.5833320992156,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="800.541657698031,505.098505253905">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="123.197913022868,-61.5890351295262"
+              Start="0,0"
+              End="123.197913022868,-54.0890351295262">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-26.7945175647631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-26.7945175647631"
+                    Point2="0,-30.7945175647631"
+                    Point3="4,-30.7945175647631" />
+                  <mssgle:LineSegment
+                    End="119.197913022868,-30.7945175647631" />
+                  <mssgle:CubicBezierSegment
+                    Point1="119.197913022868,-30.7945175647631"
+                    Point2="123.197913022868,-30.7945175647631"
+                    Point3="123.197913022868,-34.7945175647631" />
+                  <mssgle:LineSegment
+                    End="123.197913022868,-54.0890351295262" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="923.739570720898,400.842803457712">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.8864086033174,-33.2800111030746"
+              Start="0,0"
+              End="-18.8864086033174,-25.7800111030746">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-15.7933593732572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-15.7933593732572"
+                    Point2="0,-19.7933593732572"
+                    Point3="-4,-19.7933593732572" />
+                  <mssgle:LineSegment
+                    End="-14.8864086033174,-19.7933593732572" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.8864086033174,-19.7933593732572"
+                    Point2="-18.8864086033174,-19.7933593732572"
+                    Point3="-18.8864086033174,-23.7933593732572" />
+                  <mssgle:LineSegment
+                    End="-18.8864086033174,-25.7800111030746" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Excel To STG_PengurusPemilik_Sheet1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="140,41.3333333333334"
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source"
+          TopLeft="153.857145289986,78.0000010939205" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1\Derived Column"
+          TopLeft="141,159" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1\Data Conversion"
+          TopLeft="372.666666848792,74.4666666425598" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination"
+          TopLeft="385.595247198041,154.28235524362" />
+        <EdgeLayout
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Excel Source Output]"
+          TopLeft="223.857145289986,119.333334427254">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-29.9682564010971,39.6666655727462"
+              Start="0,0"
+              End="-29.9682564010971,32.1666655727462">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5563133435421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5563133435421"
+                    Point2="0,23.5563133435421"
+                    Point3="-4,23.5563133435421" />
+                  <mssgle:LineSegment
+                    End="-25.9682564010971,23.5563133435421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-25.9682564010971,23.5563133435421"
+                    Point2="-29.9682564010971,23.5563133435421"
+                    Point3="-29.9682564010971,27.5563133435421" />
+                  <mssgle:LineSegment
+                    End="-29.9682564010971,32.1666655727462" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Derived Column Output]"
+          TopLeft="242.777777777778,159">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183.666666848792,-41.8666666907735"
+              Start="0,0"
+              End="183.666666848792,-34.3666666907735">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-16.9378065984701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-16.9378065984701"
+                    Point2="0,-20.9378065984701"
+                    Point3="4,-20.9378065984701" />
+                  <mssgle:LineSegment
+                    End="179.666666848792,-20.9378065984701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="179.666666848792,-20.9378065984701"
+                    Point2="183.666666848792,-20.9378065984701"
+                    Point3="183.666666848792,-24.9378065984701" />
+                  <mssgle:LineSegment
+                    End="183.666666848792,-34.3666666907735" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Excel To STG_PengurusPemilik_Sheet1.Paths[Data Conversion Output]"
+          TopLeft="473.908734801194,117.133333309226">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.1490219343935"
+              Start="0,0"
+              End="0,29.6490219343935">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6490219343935" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel To STG_PengurusPemilik_Sheet1\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel To STG_PengurusPemilik_Sheet1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
