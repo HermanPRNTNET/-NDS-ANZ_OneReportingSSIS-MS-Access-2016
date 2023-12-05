@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/7/2023 5:31:39 PM"
@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STG_Collateral_Staff_Loan"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{A4A8D5DA-CD6A-4630-A357-CB0E69B65DCB}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{2694A02C-DC8E-4A2F-A3AE-E1AE1F209F37}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com,3313;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com,3313;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABoQ5Kr5BDWKcA/vim7cB4iErv5k7gdvHqubn3ZfCjqhAAAAAAOgAAAAAIAACAAAABUHMoFnzL75JXRYkfzbNwMSdFYCLzDN3NjUpKHD47nHiAAAAB0SXRbZP8ppR4XFVZtFu2UC8ntiDfJ8yqfsZI347MugkAAAADkVB+cnihmzbbQqswHjivTcUHCIBInovAhzZdwaGPdCW7mVRZLvn7UU0vn0weh57AN3W8kj3v6GimEOmDgPwgj</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -103,7 +108,7 @@
       DTS:DTSID="{808DD16E-269D-4222-9C37-00F064FDCBCF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="InvalidNullRowCollateralStaffLoan">
+      DTS:ObjectName="InvalidNullRow">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -158,11 +163,11 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{C297F1C7-A68F-465D-9423-19F33C9AC92C}"
-          SQLTask:SqlStatementSource="&#xA;IF EXISTS(SELECT TOP 1 1 FROM STG_Collateral_Staff_Loan &#xA; WHERE Kode_Jenis_Pengikat IS NULL OR Tanggal_Pengikatan IS NULL OR Nama_Pemilik_Agunan IS NULL &#xA;&#x9;OR Alamat_Agunan IS NULL OR Bukti_kepemilikan IS NULL&#xA;&#x9;OR KODE_KAB_KOTA_DATI_II IS NULL OR Agunan_di_Asuransikan IS NULL)&#xA;BEGIN&#xA;&#xA;SELECT 1 AS InvalidNullRowCollateralStaffLoan&#xA;&#xA; TRUNCATE TABLE STG_Collateral_Staff_Loan;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;SELECT 0 AS InvalidNullRowCollateralStaffLoan &#xA;END&#xA;&#xA;"
+          SQLTask:SqlStatementSource="EXEC usp_InvalidNullRow_STG_Collateral_Staff_Loan"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="InvalidNullRowCollateralStaffLoan"
-            SQLTask:DtsVariableName="User::InvalidNullRowCollateralStaffLoan" />
+            SQLTask:ResultName="InvalidNullRow"
+            SQLTask:DtsVariableName="User::InvalidNullRow" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -197,101 +202,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Generate Data From Excel File\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F1]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F1"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F2]"
-                      cachedDataType="r8"
-                      cachedName="F2"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Correct Data]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Correct Data"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]}) &amp;&amp; ![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(F1) &amp;&amp; !ISNULL(F2)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Generate Data From Excel File\Data Conversion"
               componentClassID="Microsoft.DataConvert"
@@ -3788,11 +3698,6 @@
           </components>
           <paths>
             <path
-              refId="Package\Generate Data From Excel File.Paths[Correct Data]"
-              endId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
-              name="Correct Data"
-              startId="Package\Generate Data From Excel File\Conditional Split.Outputs[Correct Data]" />
-            <path
               refId="Package\Generate Data From Excel File.Paths[Data Conversion Output]"
               endId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
@@ -3804,7 +3709,7 @@
               startId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Generate Data From Excel File.Paths[Excel Source Output]"
-              endId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output]" />
           </paths>
@@ -3870,7 +3775,7 @@
           VSTAMajorVersion="15"
           VSTAMinorVersion="0"
           Language="CSharp"
-          ReadOnlyVariables="User::InvalidNullRowCollateralStaffLoan">
+          ReadOnlyVariables="User::InvalidNullRow">
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4114,8 +4019,8 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153
         public void Main()
 		{
             // TODO: Add your code here
-            int InvalidNullRowCollateralStaffLoan = Convert.ToInt32(Dts.Variables["InvalidNullRowCollateralStaffLoan"].Value);
-            int invalidValue = InvalidNullRowCollateralStaffLoan;
+            int InvalidNullRow = Convert.ToInt32(Dts.Variables["InvalidNullRow"].Value);
+            int invalidValue = InvalidNullRow;
             if (invalidValue > 0)
             {
                 Dts.TaskResult = (int)ScriptResults.Failure;
@@ -4235,7 +4140,7 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153
     <msb:CodeName>ST_827af9b0c9174efaa22c9d88feba691e</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_827af9b0c9174efaa22c9d88feba691e</msb:DisplayName>
-    <msb:ProjectId>{35D29917-1FF5-476B-BF5F-0CB7D1CD5C51}</msb:ProjectId>
+    <msb:ProjectId>{1258415C-B54F-4D84-B708-2A6D6F3F81D6}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_827af9b0c9174efaa22c9d88feba691e.csproj" />
@@ -4357,20 +4262,20 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
           <BinaryItem
             Name="ST_827af9b0c9174efaa22c9d88feba691e.dll">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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
-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
+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
@@ -4386,7 +4291,7 @@ AP4CKwDZAAEALwDBAIsFAQDBAG0FNADhAFwEOQBxAGYEBgCJAGYEBgDpALUAQgDpAKIFSQCRAGYE
 TgCxAGYEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsABgEu
 ADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABjAGsA
 bAADAAEABAADAAAAOASdAAAAFAGiAAAAgwWnAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
-AAAAFCLLcwAAAAAAAGYAAAAEAAAAAAAAAAAAAABVAF0AAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
+AAAAIyIDQgAAAAAAAGYAAAAEAAAAAAAAAAAAAABVAF0AAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
 BAAAAAAAAAAAAAAAVQDJAwAAAAAPAAAAAAAAAAAAAABeADYAAAAAAAAAAAABAAAAtwQAAAUAAgAA
 AAAAAFRvSW50MzIAU1RfMmU3YzMxZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAPE1vZHVsZT4A
 TWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AbXNjb3JsaWIAU1RfODI3YWY5
@@ -4413,39 +4318,39 @@ ZW0uUmVzb3VyY2VzAFNUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzLlByb3BlcnRp
 ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8yZTdjMzFlYzVhNTQ0OWM2
 OTk0NzBmOGE0YTgwYzE1My5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2Vz
 cwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
-X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAABDSQBuAHYAYQBsAGkAZABOAHUAbABs
-AFIAbwB3AEMAbwBsAGwAYQB0AGUAcgBhAGwAUwB0AGEAZgBmAEwAbwBhAG4AAA1NAGEAaQBuACgA
-KQAAgM1TAG8AbQBlACAAYwBvAGwAdQBtAG4AcwAgAGQAbwBuACcAdAAgAGEAbABsAG8AdwAgAG4A
-dQBsAGwAIABhAG4AZAAgAG0AdQBzAHQAIABoAGEAdgBlACAAYQAgAHYAYQBsAHUAZQAuACAAUABs
-AGUAYQBzAGUAIAByAGUAdgBpAGUAdwAgAHQAaABlACAAcwBvAHUAcgBjAGUAIABkAGEAdABhACAA
-ZgBpAGwAZQAgAGIAZQBmAG8AcgBlACAAdQBwAGwAbwBhAGQALgABAQBxUwBUAF8AMgBlADcAYwAz
-ADEAZQBjADUAYQA1ADQANAA5AGMANgA5ADkANAA3ADAAZgA4AGEANABhADgAMABjADEANQAzAC4A
-UAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAAAAACOYsGFb8w5Ou9pRbK/o
-wIUABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAASYQQgABJlBSABEmkcAyAAHAQAAQgcBCAA
-EnEIIAUCCA4ODggGAAESdRF5BCAAEn0GIAIBDhJ9CLd6XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAA
-AAMGEkkDBhJNAwYSEAIGCAMGERQEAAASSQQAABJNBQABARJNBAAAEhADAAABBAgAEkkECAASTQQI
-ABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9uVGhyb3dzAQgBAAIAAAAAACgBACNT
-VF8yZTdjMzFlYzVhNTQ0OWM2OTk0NzBmOGE0YTgwYzE1MwAABQEAAAAAFgEAEUNvcHlyaWdodCBA
-ICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjcBAFQOFEZyYW1ld29ya0Rpc3Bs
-YXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291
-cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
-ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMu
-UnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAAELwAAAAAAAAAAAAAeLwAA
-ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEC8AAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
-LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAAAdSQBuAHYAYQBsAGkAZABOAHUAbABs
+AFIAbwB3AAANTQBhAGkAbgAoACkAAIDNUwBvAG0AZQAgAGMAbwBsAHUAbQBuAHMAIABkAG8AbgAn
+AHQAIABhAGwAbABvAHcAIABuAHUAbABsACAAYQBuAGQAIABtAHUAcwB0ACAAaABhAHYAZQAgAGEA
+IAB2AGEAbAB1AGUALgAgAFAAbABlAGEAcwBlACAAcgBlAHYAaQBlAHcAIAB0AGgAZQAgAHMAbwB1
+AHIAYwBlACAAZABhAHQAYQAgAGYAaQBsAGUAIABiAGUAZgBvAHIAZQAgAHUAcABsAG8AYQBkAC4A
+AQEAcVMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
+ADQAYQA4ADAAYwAxADUAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAAhg1W7DAI1k6jrFIVtmCF6AAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUF
+IAESaRwDIAAcBAABCBwEIAAScQggBQIIDg4OCAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkI
+iYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEBEk0EAAAS
+EAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJv
+d3MBCAEAAgAAAAAAKAEAI1NUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzAAAFAQAA
+AAAWAQARQ29weXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEA
+VA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43AAAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+ANwuAAAAAAAAAAAAAPYuAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoLgAAAAAAAAAAAAAAAF9D
+b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQDLcxQiAAABAMtzFCI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQADQiMiAAABAANCIyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
 ADQAYQA4ADAAYwAxADUAMwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADcAMgA0AC4AMgA5ADYANAAzAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADcAMwA5AC4AMQA2ADgAOQA5AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADgAMgA3AGEAZgA5AGIAMABjADkAMQA3ADQAZQBmAGEAYQAyADIAYwA5AGQAOAA4AGYA
 ZQBiAGEANgA5ADEAZQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -4454,15 +4359,15 @@ AGEAbQBlAAAAUwBUAF8AOAAyADcAYQBmADkAYgAwAGMAOQAxADcANABlAGYAYQBhADIAMgBjADkA
 ZAA4ADgAZgBlAGIAYQA2ADkAMQBlAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYA
 OABhADQAYQA4ADAAYwAxADUAMwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAA3ADIANAAuADIAOQA2ADQAMwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADIANAAuADIAOQA2ADQAMwAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAA3ADMAOQAuADEANgA4ADkAOQAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADMAOQAuADEANgA4ADkAOQAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAwPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAIPwAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4579,35 +4484,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="252,42.6666666666667"
+          Size="252,42.4"
           Id="Package\Check Invalid NULL mandatory fields"
           TopLeft="181.166663649182,300.162505221285" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Execute SP Report Monitoring"
           TopLeft="535.385408370912,403.052639007305" />
         <NodeLayout
-          Size="226.666666666667,42.6666666666667"
+          Size="226.4,42.4"
           Id="Package\Generate Data From Excel File"
           TopLeft="180.624998202547,188.700001993023" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.4"
           Id="Package\Get Report Date"
           TopLeft="207.416663258026,71.6666725882317" />
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
+          Size="181.6,42.4"
           Id="Package\Move File After Insert"
           TopLeft="189.135413530438,397.370834980575" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.4"
           Id="Package\Raise Error Null"
           TopLeft="492.309515072831,300.355611081212" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.4"
           Id="Package\Set 'NULL' into NULL"
           TopLeft="537.916654429089,200.333338789982" />
         <NodeLayout
-          Size="329.333333333334,42.6666666666667"
+          Size="329.6,42.4"
           Id="Package\Truncate STG_Collateral_Staff_Loan"
           TopLeft="99.9166648599012,0.200001069307365" />
         <EdgeLayout
@@ -4831,23 +4736,23 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Generate Data From Excel File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
-          Id="Package\Generate Data From Excel File\OLE DB Destination"
-          TopLeft="260,277" />
+          Size="158.4,42.4"
+          Id="Package\Generate Data From Excel File\Data Conversion"
+          TopLeft="496.125000251457,201.115788856415" />
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="139.2,42.4"
           Id="Package\Generate Data From Excel File\Excel Source"
           TopLeft="231.500000558793,11.1631589357757" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="174.4,42.4"
+          Id="Package\Generate Data From Excel File\OLE DB Destination"
+          TopLeft="260,277" />
+        <NodeLayout
+          Size="154.4,42.4"
           Id="Package\Generate Data From Excel File\Derived Column"
           TopLeft="448.749997187406,104.600004835129" />
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\Generate Data From Excel File\Data Conversion"
-          TopLeft="496.125000251457,201.115788856415" />
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Derived Column Output]"
           TopLeft="526.083330520739,147.266671501795">
@@ -4916,78 +4821,38 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,42.6666666666667"
-          Id="Package\Generate Data From Excel File\Conditional Split"
-          TopLeft="168.750001359731,140.466670943896" />
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Excel Source Output]"
-          TopLeft="301.16666722546,53.8298256024424">
+          TopLeft="301.100000558793,53.5631589357757">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.4166658657292,86.6368453414536"
+              EndConnector="224.849996628613,51.0368458993533"
               Start="0,0"
-              End="-54.4166658657292,79.1368453414536">
+              End="224.849996628613,43.5368458993533">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.3184226707268" />
+                    End="0,21.5184229496766" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.3184226707268"
-                    Point2="0,43.3184226707268"
-                    Point3="-4,43.3184226707268" />
+                    Point1="0,21.5184229496766"
+                    Point2="0,25.5184229496766"
+                    Point3="4,25.5184229496766" />
                   <mssgle:LineSegment
-                    End="-50.4166658657292,43.3184226707268" />
+                    End="220.849996628613,25.5184229496766" />
                   <mssgle:CubicBezierSegment
-                    Point1="-50.4166658657292,43.3184226707268"
-                    Point2="-54.4166658657292,43.3184226707268"
-                    Point3="-54.4166658657292,47.3184226707268" />
+                    Point1="220.849996628613,25.5184229496766"
+                    Point2="224.849996628613,25.5184229496766"
+                    Point3="224.849996628613,29.5184229496766" />
                   <mssgle:LineSegment
-                    End="-54.4166658657292,79.1368453414536" />
+                    End="224.849996628613,43.5368458993533" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generate Data From Excel File.Paths[Correct Data]"
-          TopLeft="324.750001359731,161.800004277229">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.999995827675,-35.8666661087672"
-              Start="0,0"
-              End="116.499995827675,-35.8666661087672">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="57.9999979138374,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="57.9999979138374,0"
-                    Point2="61.9999979138374,0"
-                    Point3="61.9999979138374,-4" />
-                  <mssgle:LineSegment
-                    End="61.9999979138374,-31.8666661087672" />
-                  <mssgle:CubicBezierSegment
-                    Point1="61.9999979138374,-31.8666661087672"
-                    Point2="61.9999979138374,-35.8666661087672"
-                    Point3="65.9999979138374,-35.8666661087672" />
-                  <mssgle:LineSegment
-                    End="116.499995827675,-35.8666661087672" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="33.6741190075874,1,56.6517578125,9.5537109375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

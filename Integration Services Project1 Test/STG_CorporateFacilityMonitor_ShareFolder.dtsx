@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/7/2023 11:44:16 AM"
@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STG_CorporateFacilityMonitor_ShareFolder"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{2C273CEF-1740-48C3-8D36-2504D5290F2B}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{ADA5C291-D415-4BE7-B782-710B0F24A153}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{8D7E6268-BC59-4C15-9A8F-B99B5E8B2809}ndsantasena.southeastasia.cloudapp.azure.com.ANZOneReportingSLIKAlpha.hend;" />
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{8D7E6268-BC59-4C15-9A8F-B99B5E8B2809}ndsantasena.southeastasia.cloudapp.azure.com.ANZOneReportingSLIKAlpha.hend;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADnaU1FIAzMxAn2iH7KrPKia/B9bJqlKyI4MCT9oD/8CwAAAAAOgAAAAAIAACAAAACMYCOVyULZ9Ieq1KEEgkMgweBgnQSDRfNJPYuCUWQsNyAAAACp2ONoTu1CuvThlJLqNoXOs1/p1Yc3z58J5wN0KhGqSkAAAAD4kD11fOpKGA6lKo0t4EMB0AMPEs56z0Q0PMVAQKVdM9pNmBhcbSdRNHcBlBRfJD34wndp3pqgNcDRomvkOXFS</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -103,7 +108,7 @@
       DTS:DTSID="{DDB83E6D-0903-46C8-9B82-D75CA4AB5264}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="InvalidNullRowCorporateFacilityMonitor">
+      DTS:ObjectName="InvalidNullRow">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -158,11 +163,11 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{8D7E6268-BC59-4C15-9A8F-B99B5E8B2809}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON&#xA;&#xA;IF EXISTS(SELECT TOP 1 1 FROM STG_corporate_facilitymonitor_Facility_Monitor &#xA; WHERE Initial_Agreement_No IS NULL OR Dated IS NULL OR latest_Credit_Agreement_Ref_No IS NULL &#xA;&#x9;OR Facility_Period_Actual_Start_Date IS NULL OR Facility_Amount IS NULL)&#xA;BEGIN&#xA;&#xA;&#x9;SELECT 1 AS InvalidNullRowCorporateFacilityMonitor &#xA;&#xA; TRUNCATE TABLE STG_corporate_facilitymonitor_Facility_Monitor;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;SELECT 0 AS InvalidNullRowCorporateFacilityMonitor &#xA;END&#xA;&#xA;"
+          SQLTask:SqlStatementSource="EXEC usp_InvalidNullRow_STG_corporate_facilitymonitor_Facility_Monitor"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="InvalidNullRowCorporateFacilityMonitor"
-            SQLTask:DtsVariableName="User::InvalidNullRowCorporateFacilityMonitor" />
+            SQLTask:ResultName="InvalidNullRow"
+            SQLTask:DtsVariableName="User::InvalidNullRow" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -3919,7 +3924,7 @@
           VSTAMajorVersion="15"
           VSTAMinorVersion="0"
           Language="CSharp"
-          ReadOnlyVariables="User::InvalidNullRowCorporateFacilityMonitor">
+          ReadOnlyVariables="User::InvalidNullRow">
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4163,8 +4168,8 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153
         public void Main()
 		{
             // TODO: Add your code here
-            int InvalidNullRowCorporateFacilityMonitor = Convert.ToInt32(Dts.Variables["InvalidNullRowCorporateFacilityMonitor"].Value);
-            int invalidValue = InvalidNullRowCorporateFacilityMonitor;
+            int InvalidNullRow = Convert.ToInt32(Dts.Variables["InvalidNullRow"].Value);
+            int invalidValue = InvalidNullRow;
             if (invalidValue > 0)
             {
                 Dts.TaskResult = (int)ScriptResults.Failure;
@@ -4284,7 +4289,7 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153
     <msb:CodeName>ST_722ab915d7d143468b75cc0642fe121a</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_722ab915d7d143468b75cc0642fe121a</msb:DisplayName>
-    <msb:ProjectId>{D56D6465-B7DA-4047-B66E-2D2B07C0AA55}</msb:ProjectId>
+    <msb:ProjectId>{083ED852-1F98-4CBC-902B-EEBA6C5E7D76}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_722ab915d7d143468b75cc0642fe121a.csproj" />
@@ -4406,20 +4411,20 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
           <BinaryItem
             Name="ST_722ab915d7d143468b75cc0642fe121a.dll">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
-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
+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
-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
+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
-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
+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
-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
+LnJlbG9jAAAMAAAAAGAAAAACAAAAGAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADo
+LgAAAAAAAEgAAAACAAUAICEAANwMAAABAAAAAAAAAPwtAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAABMwBgBeAAAAAAAAAAIoEAAACm8RAAAKcgEAAHBvEgAACm8T
-AAAKKBQAAAoWMS8CKBAAAAoXbxUAAAoCKBAAAApvFgAAChVyTwAAcHJdAABwciwBAHAVbxcAAAom
-KgIoEAAAChZvFQAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAELR5yLgEAcNADAAACKBoAAApvGwAA
+AAAKKBQAAAoWMS8CKBAAAAoXbxUAAAoCKBAAAApvFgAAChVyHwAAcHItAABwcvwAAHAVbxcAAAom
+KgIoEAAAChZvFQAACioeAigYAAAKKh4CKBkAAAoqrn4BAAAELR5y/gAAcNADAAACKBoAAApvGwAA
 CnMcAAAKgAEAAAR+AQAABCoafgIAAAQqHgKAAgAABCoafgMAAAQqHgIoHQAACioucwgAAAaAAwAA
 BCpCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADQAwAAI34AADwEAACwBQAAI1N0
-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
+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
@@ -4435,7 +4440,7 @@ AP4CKwDZAAEALwDBAIsFAQDBAG0FNADhAFwEOQBxAGYEBgCJAGYEBgDpALUAQgDpAKIFSQCRAGYE
 TgCxAGYEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsABgEu
 ADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABjAGsA
 bAADAAEABAADAAAAOASdAAAAFAGiAAAAgwWnAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
-AAAAFCK2cAAAAAAAAF0AAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
+AAAAIyI6YgAAAAAAAF0AAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
 BAAAAAAAAAAAAAAAVQDJAwAAAAAPAAAAAAAAAAAAAABeADYAAAAAAAAAAAABAAAAtwQAAAUAAgAA
 AAAAAFRvSW50MzIAU1RfMmU3YzMxZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAPE1vZHVsZT4A
 TWljcm9zb2Z0LlNxbFNlcnZlci5NYW5hZ2VkRFRTAHZhbHVlX18AU1RfNzIyYWI5MTVkN2QxNDM0
@@ -4462,39 +4467,39 @@ ZW0uUmVzb3VyY2VzAFNUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzLlByb3BlcnRp
 ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8yZTdjMzFlYzVhNTQ0OWM2
 OTk0NzBmOGE0YTgwYzE1My5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2Vz
 cwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
-X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAABNSQBuAHYAYQBsAGkAZABOAHUAbABs
-AFIAbwB3AEMAbwByAHAAbwByAGEAdABlAEYAYQBjAGkAbABpAHQAeQBNAG8AbgBpAHQAbwByAAAN
-TQBhAGkAbgAoACkAAIDNUwBvAG0AZQAgAGMAbwBsAHUAbQBuAHMAIABkAG8AbgAnAHQAIABhAGwA
-bABvAHcAIABuAHUAbABsACAAYQBuAGQAIABtAHUAcwB0ACAAaABhAHYAZQAgAGEAIAB2AGEAbAB1
-AGUALgAgAFAAbABlAGEAcwBlACAAcgBlAHYAaQBlAHcAIAB0AGgAZQAgAHMAbwB1AHIAYwBlACAA
-ZABhAHQAYQAgAGYAaQBsAGUAIABiAGUAZgBvAHIAZQAgAHUAcABsAG8AYQBkAC4AAQEAcVMAVABf
-ADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABhADQAYQA4ADAA
-YwAxADUAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUAcwAA8n6KJ24K
-/0G66LWVHjZrngAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUFIAESaRwDIAAc
-BAABCBwEIAAScQggBQIIDg4OCAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkIiYRdzYCAzJEE
-AAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEBEk0EAAASEAMAAAEECAAS
-SQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAA
-AAAAKAEAI1NUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzAAAFAQAAAAAWAQARQ29w
-eXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEAVA4URnJhbWV3
-b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43AAAAtAAAAM7K774BAAAAkQAAAGxTeXN0
-ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
-dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
-c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAAwvAAAAAAAA
-AAAAACYvAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAYLwAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
-AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAAAdSQBuAHYAYQBsAGkAZABOAHUAbABs
+AFIAbwB3AAANTQBhAGkAbgAoACkAAIDNUwBvAG0AZQAgAGMAbwBsAHUAbQBuAHMAIABkAG8AbgAn
+AHQAIABhAGwAbABvAHcAIABuAHUAbABsACAAYQBuAGQAIABtAHUAcwB0ACAAaABhAHYAZQAgAGEA
+IAB2AGEAbAB1AGUALgAgAFAAbABlAGEAcwBlACAAcgBlAHYAaQBlAHcAIAB0AGgAZQAgAHMAbwB1
+AHIAYwBlACAAZABhAHQAYQAgAGYAaQBsAGUAIABiAGUAZgBvAHIAZQAgAHUAcABsAG8AYQBkAC4A
+AQEAcVMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
+ADQAYQA4ADAAYwAxADUAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAA/JBUezpHmk22DXyl092y4AAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUF
+IAESaRwDIAAcBAABCBwEIAAScQggBQIIDg4OCAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkI
+iYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEBEk0EAAAS
+EAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJv
+d3MBCAEAAgAAAAAAKAEAI1NUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzAAAFAQAA
+AAAWAQARQ29weXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEA
+VA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43AAAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+ANwuAAAAAAAAAAAAAPYuAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoLgAAAAAAAAAAAAAAAF9D
+b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQC2cBQiAAABALZwFCI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQA6YiMiAAABADpiIyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
 ADQAYQA4ADAAYwAxADUAMwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADcAMgA0AC4AMgA4ADgANQA0AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADcAMwA5AC4AMgA1ADEANAA2AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADcAMgAyAGEAYgA5ADEANQBkADcAZAAxADQAMwA0ADYAOABiADcANQBjAGMAMAA2ADQA
 MgBmAGUAMQAyADEAYQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -4503,15 +4508,15 @@ AGEAbQBlAAAAUwBUAF8ANwAyADIAYQBiADkAMQA1AGQANwBkADEANAAzADQANgA4AGIANwA1AGMA
 YwAwADYANAAyAGYAZQAxADIAMQBhAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYA
 OABhADQAYQA4ADAAYwAxADUAMwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAA3ADIANAAuADIAOAA4ADUANAAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADIANAAuADIAOAA4ADUANAAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAA3ADMAOQAuADIANQAxADQANgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADMAOQAuADIANQAxADQANgAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAA4PwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAIPwAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -4628,35 +4633,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="252,42.6666666666667"
+          Size="252,42.4"
           Id="Package\Check Invalid NULL mandatory fields"
           TopLeft="139.852676159637,342.749669059893" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Execute SP Report Monitoring"
           TopLeft="517.174099108538,468.124318464624" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Generate Data From Excel File"
           TopLeft="171.458331672475,219.649124221513" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.4"
           Id="Package\Get Report Date"
           TopLeft="432.374993229285,128.940794345994" />
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
+          Size="181.6,42.4"
           Id="Package\Move File After Insert"
           TopLeft="124.584819244288,471.839599083657" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="151.2,41.6"
           Id="Package\Raise Error Null"
           TopLeft="543.964276197944,347.005274847177" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,42.4"
           Id="Package\Set 'NULL' into NULL"
           TopLeft="513.572907593256,220.882461204438" />
         <NodeLayout
-          Size="346.666666666667,42.6666666666667"
+          Size="346.4,42.4"
           Id="Package\Truncate STG_corporate_facilitymonitor_Facility_Monitor"
           TopLeft="123.781247827691,60" />
         <EdgeLayout
@@ -4729,30 +4734,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="603.572907593256,263.549127871105">
+          TopLeft="603.572907593256,263.282461204438">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-337.720231433619,79.2005411887886"
+              EndConnector="-337.720231433619,79.4672078554551"
               Start="0,0"
-              End="-337.720231433619,71.7005411887886">
+              End="-337.720231433619,71.9672078554551">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.6002705943943" />
+                    End="0,35.7336039277275" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,35.6002705943943"
-                    Point2="0,39.6002705943943"
-                    Point3="-4,39.6002705943943" />
+                    Point1="0,35.7336039277275"
+                    Point2="0,39.7336039277275"
+                    Point3="-4,39.7336039277275" />
                   <mssgle:LineSegment
-                    End="-333.720231433619,39.6002705943943" />
+                    End="-333.720231433619,39.7336039277275" />
                   <mssgle:CubicBezierSegment
-                    Point1="-333.720231433619,39.6002705943943"
-                    Point2="-337.720231433619,39.6002705943943"
-                    Point3="-337.720231433619,43.6002705943943" />
+                    Point1="-333.720231433619,39.7336039277275"
+                    Point2="-337.720231433619,39.7336039277275"
+                    Point3="-337.720231433619,43.7336039277275" />
                   <mssgle:LineSegment
-                    End="-337.720231433619,71.7005411887886" />
+                    End="-337.720231433619,71.9672078554551" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4785,7 +4790,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="391.852676159637,366.210805286868">
+          TopLeft="391.852676159637,365.877471953535">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4807,30 +4812,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="619.964276197944,389.671941513843">
+          TopLeft="619.564276197944,388.605274847177">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-404.712790286989,82.1676575698131"
+              EndConnector="-404.179456953656,83.2343242364799"
               Start="0,0"
-              End="-404.712790286989,74.6676575698131">
+              End="-404.179456953656,75.7343242364799">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.0838287849065" />
+                    End="0,37.61716211824" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.0838287849065"
-                    Point2="0,41.0838287849065"
-                    Point3="-4,41.0838287849065" />
+                    Point1="0,37.61716211824"
+                    Point2="0,41.61716211824"
+                    Point3="-4,41.61716211824" />
                   <mssgle:LineSegment
-                    End="-400.712790286989,41.0838287849065" />
+                    End="-400.179456953656,41.61716211824" />
                   <mssgle:CubicBezierSegment
-                    Point1="-400.712790286989,41.0838287849065"
-                    Point2="-404.712790286989,41.0838287849065"
-                    Point3="-404.712790286989,45.0838287849065" />
+                    Point1="-400.179456953656,41.61716211824"
+                    Point2="-404.179456953656,41.61716211824"
+                    Point3="-404.179456953656,45.61716211824" />
                   <mssgle:LineSegment
-                    End="-404.712790286989,74.6676575698131" />
+                    End="-404.179456953656,75.7343242364799" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4868,21 +4873,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Generate Data From Excel File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
+          Size="174.4,42.4"
           Id="Package\Generate Data From Excel File\OLE DB Destination"
           TopLeft="238,262" />
         <NodeLayout
-          Size="142.666666666667,42.6666666666667"
+          Size="142.4,42.4"
           Id="Package\Generate Data From Excel File\Excel Source"
           TopLeft="269,75" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.4,42.4"
           Id="Package\Generate Data From Excel File\Data Conversion"
           TopLeft="257.350698566841,183.840277136904" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="154.4,42.4"
           Id="Package\Generate Data From Excel File\Derived Column"
           TopLeft="487.211806252754,90.2222271296713" />
         <EdgeLayout
@@ -4916,9 +4921,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-26.4888453771704,22.7465280982148,41.6269921875,9.6025390625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4952,9 +4955,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="16.9590736992939,-15.6025390625,41.6269921875,9.6025390625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -4988,9 +4989,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-134.744049936707,30.4756916702829,41.6269921875,9.6025390625"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

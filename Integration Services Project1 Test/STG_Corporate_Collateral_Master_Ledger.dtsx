@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="11/6/2023 9:11:38 AM"
@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STG_Corporate_Collateral_Master_Ledger"
   DTS:PackageType="5"
-  DTS:VersionBuild="86"
-  DTS:VersionGUID="{5A4FE6EB-11FD-4D09-835F-5CFEAEA7996E}">
+  DTS:VersionBuild="95"
+  DTS:VersionGUID="{AB3569DF-8030-416F-BA2C-74450E58BDFD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{CC9869E4-E418-49D4-B184-9A449E207EF5}ndsantasena.southeastasia.cloudapp.azure.com.ANZOneReportingSLIKAlpha.hend;" />
+          DTS:ConnectionString="Data Source=ndsantasena.southeastasia.cloudapp.azure.com;User ID=hendra;Initial Catalog=ANZOneReportingSLIKAlpha;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-Package1-{CC9869E4-E418-49D4-B184-9A449E207EF5}ndsantasena.southeastasia.cloudapp.azure.com.ANZOneReportingSLIKAlpha.hend;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB2lH1KcVMliFLMCAe9VNlMsYBvzWNbspIkhs/KsvzZlQAAAAAOgAAAAAIAACAAAADYL6JYiQyhBgTE2n0cLkD7GHq7EYRbQHE/agQKhLqhXSAAAAC5MbNjJWps7SLlhXwv6siNoeweMGlqdh+/PB7EVepuWUAAAAB3/jrftCEmUiMRcCtxPgCIZAgYsT/ujT4ZutgEm+AIDuMS/a241ZitSN1goF8Uwdq7vJV+BoPxpYKUqkmYYrF0</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -103,7 +108,7 @@
       DTS:DTSID="{9D8BAC8B-298F-4778-B3AB-3609F99640B3}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
-      DTS:ObjectName="InvalidNullRowCorporateCollateralMasterLedger">
+      DTS:ObjectName="InvalidNullRow">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
     </DTS:Variable>
@@ -158,11 +163,11 @@
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{CC9869E4-E418-49D4-B184-9A449E207EF5}"
-          SQLTask:SqlStatementSource="SET NOCOUNT ON&#xA;&#xA;&#xA;&#xA;IF EXISTS(SELECT TOP 1 1 FROM STG_Corporate_collateral_masterledger &#xA; WHERE Golongan_Penjamin IS NULL OR Guarantor_Address IS NULL OR Guarantor_Type_Jenis_Penjamin IS NULL &#xA;&#x9;OR CUSTOMER_NAME IS NULL OR Status_Bukti_Kepemilikan IS NULL&#xA;&#x9;OR Location_Code IS NULL OR Paripasu_Secured IS NULL&#xA;&#x9;OR Insured_Y_T IS NULL OR Guarantor_ID_Type IS NULL&#xA;&#x9;OR Ownership_Name IS NULL)&#xA;BEGIN&#xA;SELECT 1 AS InvalidNullRowCorporateCollateralMasterLedger &#xA; TRUNCATE TABLE STG_Corporate_collateral_masterledger;&#xA;END&#xA;ELSE&#xA;BEGIN&#xA;&#x9;SELECT 0 AS InvalidNullRowCorporateCollateralMasterLedger &#xA;END"
+          SQLTask:SqlStatementSource="EXEC usp_InvalidNullRow_STG_Corporate_collateral_masterledger"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
-            SQLTask:ResultName="InvalidNullRowCorporateCollateralMasterLedger"
-            SQLTask:DtsVariableName="User::InvalidNullRowCorporateCollateralMasterLedger" />
+            SQLTask:ResultName="InvalidNullRow"
+            SQLTask:DtsVariableName="User::InvalidNullRow" />
         </SQLTask:SqlTaskData>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -197,120 +202,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Generate Data From Excel File\Conditional Split"
-              componentClassID="Microsoft.ConditionalSplit"
-              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
-              name="Conditional Split"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
-                  description="Input to the Conditional Split Transformation"
-                  name="Conditional Split Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F1]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F1"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F62]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F62"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F62]" />
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F63]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F63"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F63]" />
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F64]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F64"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F64]" />
-                    <inputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input].Columns[F65]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="F65"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F65]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Correct Data]"
-                  description="Output 1 of the Conditional Split Transformation"
-                  errorOrTruncationOperation="Computation"
-                  errorRowDisposition="FailComponent"
-                  exclusionGroup="1"
-                  name="Correct Data"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
-                  truncationRowDisposition="FailComponent">
-                  <properties>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]}) &amp;&amp; ![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F62]}) &amp;&amp; ![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F63]}) &amp;&amp; ![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F64]}) &amp;&amp; ![ISNULL](#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F65]})</property>
-                    <property
-                      containsID="true"
-                      dataType="System.String"
-                      description="Specifies the friendly version of the expression. This expression version uses column names."
-                      expressionType="Notify"
-                      name="FriendlyExpression">!ISNULL(F1) &amp;&amp; !ISNULL(F62) &amp;&amp; !ISNULL(F63) &amp;&amp; !ISNULL(F64) &amp;&amp; !ISNULL(F65)</property>
-                    <property
-                      dataType="System.Int32"
-                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
-                      name="EvaluationOrder">0</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Default Output]"
-                  description="Default Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  name="Conditional Split Default Output"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      name="IsDefaultOut">true</property>
-                  </properties>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output]"
-                  description="Error Output of the Conditional Split Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Conditional Split Error Output"
-                  synchronousInputId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Generate Data From Excel File\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Generate Data From Excel File\Data Conversion"
               componentClassID="Microsoft.DataConvert"
@@ -5582,11 +5473,6 @@
           </components>
           <paths>
             <path
-              refId="Package\Generate Data From Excel File.Paths[Correct Data]"
-              endId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
-              name="Correct Data"
-              startId="Package\Generate Data From Excel File\Conditional Split.Outputs[Correct Data]" />
-            <path
               refId="Package\Generate Data From Excel File.Paths[Data Conversion Output]"
               endId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
@@ -5598,7 +5484,7 @@
               startId="Package\Generate Data From Excel File\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Generate Data From Excel File.Paths[Excel Source Output]"
-              endId="Package\Generate Data From Excel File\Conditional Split.Inputs[Conditional Split Input]"
+              endId="Package\Generate Data From Excel File\Derived Column.Inputs[Derived Column Input]"
               name="Excel Source Output"
               startId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output]" />
           </paths>
@@ -5664,7 +5550,129 @@
           VSTAMajorVersion="15"
           VSTAMinorVersion="0"
           Language="CSharp"
-          ReadOnlyVariables="User::InvalidNullRowCorporateCollateralMasterLedger">
+          ReadOnlyVariables="User::InvalidNullRow">
+          <ProjectItem
+            Name="ScriptMain.cs"
+            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
+/* The Script Task allows you to perform virtually any operation that can be accomplished in
+ * a .Net application within the context of an Integration Services control flow. 
+ * 
+ * Expand the other regions which have "Help" prefixes for examples of specific ways to use
+ * Integration Services features within this script task. */
+#endregion
+
+
+#region Namespaces
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Runtime;
+using System.Windows.Forms;
+#endregion
+
+namespace ST_2e7c31ec5a5449c699470f8a4a80c153
+{
+    /// <summary>
+    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+    /// or parent of this class.
+    /// </summary>
+	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
+	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+	{
+        #region Help:  Using Integration Services variables and parameters in a script
+        /* To use a variable in this script, first ensure that the variable has been added to 
+         * either the list contained in the ReadOnlyVariables property or the list contained in 
+         * the ReadWriteVariables property of this script task, according to whether or not your
+         * code needs to write to the variable.  To add the variable, save this script, close this instance of
+         * Visual Studio, and update the ReadOnlyVariables and 
+         * ReadWriteVariables properties in the Script Transformation Editor window.
+         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
+         * 
+         * Example of reading from a variable:
+         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
+         * 
+         * Example of writing to a variable:
+         *  Dts.Variables["User::myStringVariable"].Value = "new value";
+         * 
+         * Example of reading from a package parameter:
+         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
+         *  
+         * Example of reading from a project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
+         * 
+         * Example of reading from a sensitive project parameter:
+         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
+         * */
+
+        #endregion
+
+        #region Help:  Firing Integration Services events from a script
+        /* This script task can fire events for logging purposes.
+         * 
+         * Example of firing an error event:
+         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
+         * 
+         * Example of firing an information event:
+         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
+         * 
+         * Example of firing a warning event:
+         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
+         * */
+        #endregion
+
+        #region Help:  Using Integration Services connection managers in a script
+        /* Some types of connection managers can be used in this script task.  See the topic 
+         * "Working with Connection Managers Programatically" for details.
+         * 
+         * Example of using an ADO.Net connection manager:
+         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
+         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
+         *
+         * Example of using a File connection manager
+         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
+         *  string filePath = (string)rawConnection;
+         *  //Use the connection in some code here, then release the connection
+         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
+         * */
+        #endregion
+
+
+        /// <summary>
+        /// This method is called when this script task executes in the control flow.
+        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+        /// To open Help, press F1.
+        /// </summary>
+        public void Main()
+		{
+            // TODO: Add your code here
+            int InvalidNullRow = Convert.ToInt32(Dts.Variables["InvalidNullRow"].Value);
+            int invalidValue = InvalidNullRow;
+            if (invalidValue > 0)
+            {
+                Dts.TaskResult = (int)ScriptResults.Failure;
+                Dts.Events.FireError(-1, "Main()", "Some columns don't allow null and must have a value. Please review the source data file before upload.", "", -1);
+            }
+            else
+                Dts.TaskResult = (int)ScriptResults.Success;
+        }
+
+        #region ScriptResults declaration
+        /// <summary>
+        /// This enum provides a convenient shorthand within the scope of this class for setting the
+        /// result of the script.
+        /// 
+        /// This code was generated automatically.
+        /// </summary>
+        enum ScriptResults
+        {
+            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
+            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+        };
+        #endregion
+
+	}
+}]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -5900,128 +5908,6 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
   </ProjectExtensions>
 </Project>]]></ProjectItem>
           <ProjectItem
-            Name="ScriptMain.cs"
-            Encoding="UTF8"><![CDATA[#region Help:  Introduction to the script task
-/* The Script Task allows you to perform virtually any operation that can be accomplished in
- * a .Net application within the context of an Integration Services control flow. 
- * 
- * Expand the other regions which have "Help" prefixes for examples of specific ways to use
- * Integration Services features within this script task. */
-#endregion
-
-
-#region Namespaces
-using System;
-using System.Data;
-using Microsoft.SqlServer.Dts.Runtime;
-using System.Windows.Forms;
-#endregion
-
-namespace ST_2e7c31ec5a5449c699470f8a4a80c153
-{
-    /// <summary>
-    /// ScriptMain is the entry point class of the script.  Do not change the name, attributes,
-    /// or parent of this class.
-    /// </summary>
-	[Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute]
-	public partial class ScriptMain : Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-	{
-        #region Help:  Using Integration Services variables and parameters in a script
-        /* To use a variable in this script, first ensure that the variable has been added to 
-         * either the list contained in the ReadOnlyVariables property or the list contained in 
-         * the ReadWriteVariables property of this script task, according to whether or not your
-         * code needs to write to the variable.  To add the variable, save this script, close this instance of
-         * Visual Studio, and update the ReadOnlyVariables and 
-         * ReadWriteVariables properties in the Script Transformation Editor window.
-         * To use a parameter in this script, follow the same steps. Parameters are always read-only.
-         * 
-         * Example of reading from a variable:
-         *  DateTime startTime = (DateTime) Dts.Variables["System::StartTime"].Value;
-         * 
-         * Example of writing to a variable:
-         *  Dts.Variables["User::myStringVariable"].Value = "new value";
-         * 
-         * Example of reading from a package parameter:
-         *  int batchId = (int) Dts.Variables["$Package::batchId"].Value;
-         *  
-         * Example of reading from a project parameter:
-         *  int batchId = (int) Dts.Variables["$Project::batchId"].Value;
-         * 
-         * Example of reading from a sensitive project parameter:
-         *  int batchId = (int) Dts.Variables["$Project::batchId"].GetSensitiveValue();
-         * */
-
-        #endregion
-
-        #region Help:  Firing Integration Services events from a script
-        /* This script task can fire events for logging purposes.
-         * 
-         * Example of firing an error event:
-         *  Dts.Events.FireError(18, "Process Values", "Bad value", "", 0);
-         * 
-         * Example of firing an information event:
-         *  Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, ref fireAgain)
-         * 
-         * Example of firing a warning event:
-         *  Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0);
-         * */
-        #endregion
-
-        #region Help:  Using Integration Services connection managers in a script
-        /* Some types of connection managers can be used in this script task.  See the topic 
-         * "Working with Connection Managers Programatically" for details.
-         * 
-         * Example of using an ADO.Net connection manager:
-         *  object rawConnection = Dts.Connections["Sales DB"].AcquireConnection(Dts.Transaction);
-         *  SqlConnection myADONETConnection = (SqlConnection)rawConnection;
-         *  //Use the connection in some code here, then release the connection
-         *  Dts.Connections["Sales DB"].ReleaseConnection(rawConnection);
-         *
-         * Example of using a File connection manager
-         *  object rawConnection = Dts.Connections["Prices.zip"].AcquireConnection(Dts.Transaction);
-         *  string filePath = (string)rawConnection;
-         *  //Use the connection in some code here, then release the connection
-         *  Dts.Connections["Prices.zip"].ReleaseConnection(rawConnection);
-         * */
-        #endregion
-
-
-        /// <summary>
-        /// This method is called when this script task executes in the control flow.
-        /// Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
-        /// To open Help, press F1.
-        /// </summary>
-        public void Main()
-		{
-            // TODO: Add your code here
-            int InvalidNullRowCorporateCollateralMasterLedger = Convert.ToInt32(Dts.Variables["InvalidNullRowCorporateCollateralMasterLedger"].Value);
-            int invalidValue = InvalidNullRowCorporateCollateralMasterLedger;
-            if (invalidValue > 0)
-            {
-                Dts.TaskResult = (int)ScriptResults.Failure;
-                Dts.Events.FireError(-1, "Main()", "Some columns don't allow null and must have a value. Please review the source data file before upload.", "", -1);
-            }
-            else
-                Dts.TaskResult = (int)ScriptResults.Success;
-        }
-
-        #region ScriptResults declaration
-        /// <summary>
-        /// This enum provides a convenient shorthand within the scope of this class for setting the
-        /// result of the script.
-        /// 
-        /// This code was generated automatically.
-        /// </summary>
-        enum ScriptResults
-        {
-            Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success,
-            Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-        };
-        #endregion
-
-	}
-}]]></ProjectItem>
-          <ProjectItem
             Name="Project"
             Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
 <c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
@@ -6029,7 +5915,7 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153
     <msb:CodeName>ST_23c0df5c47994e3dad97fe06a00b61a1</msb:CodeName>
     <msb:Language>msBuild</msb:Language>
     <msb:DisplayName>ST_23c0df5c47994e3dad97fe06a00b61a1</msb:DisplayName>
-    <msb:ProjectId>{B89177F9-19BB-4AA0-AD8B-A6777D23F8B1}</msb:ProjectId>
+    <msb:ProjectId>{E30D784D-CEEB-41DA-A6DC-6E1A283DFCD0}</msb:ProjectId>
   </msb:PropertyGroup>
   <msb:ItemGroup>
     <msb:Project Include="ST_23c0df5c47994e3dad97fe06a00b61a1.csproj" />
@@ -6151,20 +6037,20 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
           <BinaryItem
             Name="ST_23c0df5c47994e3dad97fe06a00b61a1.dll">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
-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
+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
-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
+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
-AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAATA8AAAAgAAAAEAAAAAIA
+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
-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
+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
-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
+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
-cmluZ3MAAAAA7AkAALABAAAjVVMAnAsAABAAAAAjR1VJRAAAAKwLAABwAQAAI0Jsb2IAAAAAAAAA
+cmluZ3MAAAAA7AkAAHABAAAjVVMAXAsAABAAAAAjR1VJRAAAAGwLAABwAQAAI0Jsb2IAAAAAAAAA
 AgAAAVcdoAEJAwAAAPoBMwAWAAABAAAAHwAAAAUAAAAGAAAACQAAAAEAAAAdAAAAAgAAABAAAAAC
 AAAAAwAAAAQAAAABAAAABAAAAAEAAAABAAAAAACYAwEAAAAAAAYAUQKGBAYA4AKGBAYAnQFzBA8A
 +gQAAAYAygEWBAYANAIWBAYAFQIWBAYAxwIWBAYAcQIWBAYAigIWBAYA4QEWBAYA/AEOAwoApQJH
@@ -6180,7 +6066,7 @@ AP4CKwDZACUALwDBAIsFAQDBAG0FNADhAFwEOQBxAGYEBgCJAGYEBgDpALUAQgDpAKIFSQCRAGYE
 TgCxAGYEBgAIABQAZwAIABgAbAApAHMA1AAuAAsArAAuABMAtQAuABsA1AAuACMA3QAuACsABgEu
 ADMABgEuADsABgEuAEMA3QAuAEsADAEuAFMABgEuAFsAIwFDAGMAbABJAHMA1ABhAHsAbABjAGsA
 bAADAAEABAADAAAAOASdAAAAFAGiAAAAgwWnAAIABAADAAIABQAFAAEABgAFAAIABwAHAASAAAAB
-AAAAFCKBcQAAAAAAAAEAAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
+AAAAIyLSYQAAAAAAAAEAAAAEAAAAAAAAAAAAAABVAIEAAAAAAA8AAAAAAAAAAAAAAF4AKAMAAAAA
 BAAAAAAAAAAAAAAAVQDJAwAAAAAPAAAAAAAAAAAAAABeAFoAAAAAAAAAAAABAAAAtwQAAAUAAgAA
 AAAAAFNUXzIzYzBkZjVjNDc5OTRlM2RhZDk3ZmUwNmEwMGI2MWExAFRvSW50MzIAU1RfMmU3YzMx
 ZWM1YTU0NDljNjk5NDcwZjhhNGE4MGMxNTMAPE1vZHVsZT4ATWljcm9zb2Z0LlNxbFNlcnZlci5N
@@ -6207,39 +6093,39 @@ ZW0uUmVzb3VyY2VzAFNUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzLlByb3BlcnRp
 ZXMuUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBTVF8yZTdjMzFlYzVhNTQ0OWM2
 OTk0NzBmOGE0YTgwYzE1My5Qcm9wZXJ0aWVzAGdldF9WYXJpYWJsZXMAU2V0dGluZ3MAU3VjY2Vz
 cwBnZXRfRHRzAFNjcmlwdFJlc3VsdHMAZ2V0X0V2ZW50cwBPYmplY3QAZ2V0X0RlZmF1bHQAc2V0
-X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAABbSQBuAHYAYQBsAGkAZABOAHUAbABs
-AFIAbwB3AEMAbwByAHAAbwByAGEAdABlAEMAbwBsAGwAYQB0AGUAcgBhAGwATQBhAHMAdABlAHIA
-TABlAGQAZwBlAHIAAA1NAGEAaQBuACgAKQAAgM1TAG8AbQBlACAAYwBvAGwAdQBtAG4AcwAgAGQA
-bwBuACcAdAAgAGEAbABsAG8AdwAgAG4AdQBsAGwAIABhAG4AZAAgAG0AdQBzAHQAIABoAGEAdgBl
-ACAAYQAgAHYAYQBsAHUAZQAuACAAUABsAGUAYQBzAGUAIAByAGUAdgBpAGUAdwAgAHQAaABlACAA
-cwBvAHUAcgBjAGUAIABkAGEAdABhACAAZgBpAGwAZQAgAGIAZQBmAG8AcgBlACAAdQBwAGwAbwBh
-AGQALgABAQBxUwBUAF8AMgBlADcAYwAzADEAZQBjADUAYQA1ADQANAA5AGMANgA5ADkANAA3ADAA
-ZgA4AGEANABhADgAMABjADEANQAzAC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQBy
-AGMAZQBzAAAAANwgNNGPaDROv4XcInc2qVUABCABAQgDIAABBSABARERBCABAQ4FIAEBEVEEIAAS
-YQQgABJlBSABEmkcAyAAHAQAAQgcBCAAEnEIIAUCCA4ODggGAAESdRF5BCAAEn0GIAIBDhJ9CLd6
-XFYZNOCJCImEXc2AgMyRBAAAAAAEAQAAAAMGEkkDBhJNAwYSEAIGCAMGERQEAAASSQQAABJNBQAB
-ARJNBAAAEhADAAABBAgAEkkECAASTQQIABIQCAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0
-aW9uVGhyb3dzAQgBAAIAAAAAACgBACNTVF8yZTdjMzFlYzVhNTQ0OWM2OTk0NzBmOGE0YTgwYzE1
-MwAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDIzAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9u
-PXY0LjcBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNwAAALQAAADO
-yu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZl
-cnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5
-MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFE
-UEFEULQAAAAcLwAAAAAAAAAAAAA2LwAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKC8AAAAAAAAA
-AAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAA
+X1Rhc2tSZXN1bHQAQ29udmVydABnZXRfQXNzZW1ibHkAAAAdSQBuAHYAYQBsAGkAZABOAHUAbABs
+AFIAbwB3AAANTQBhAGkAbgAoACkAAIDNUwBvAG0AZQAgAGMAbwBsAHUAbQBuAHMAIABkAG8AbgAn
+AHQAIABhAGwAbABvAHcAIABuAHUAbABsACAAYQBuAGQAIABtAHUAcwB0ACAAaABhAHYAZQAgAGEA
+IAB2AGEAbAB1AGUALgAgAFAAbABlAGEAcwBlACAAcgBlAHYAaQBlAHcAIAB0AGgAZQAgAHMAbwB1
+AHIAYwBlACAAZABhAHQAYQAgAGYAaQBsAGUAIABiAGUAZgBvAHIAZQAgAHUAcABsAG8AYQBkAC4A
+AQEAcVMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
+ADQAYQA4ADAAYwAxADUAMwAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUAcwBvAHUAcgBjAGUA
+cwAA5OMGqmiQwEqW8KDwkVlCbgAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQERUQQgABJhBCAAEmUF
+IAESaRwDIAAcBAABCBwEIAAScQggBQIIDg4OCAYAARJ1EXkEIAASfQYgAgEOEn0It3pcVhk04IkI
+iYRdzYCAzJEEAAAAAAQBAAAAAwYSSQMGEk0DBhIQAgYIAwYRFAQAABJJBAAAEk0FAAEBEk0EAAAS
+EAMAAAEECAASSQQIABJNBAgAEhAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJv
+d3MBCAEAAgAAAAAAKAEAI1NUXzJlN2MzMWVjNWE1NDQ5YzY5OTQ3MGY4YTRhODBjMTUzAAAFAQAA
+AAAWAQARQ29weXJpZ2h0IEAgIDIwMjMAAEkBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuNwEA
+VA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC43AAAAtAAAAM7K774BAAAA
+kQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00
+LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkj
+U3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAA
+ANwuAAAAAAAAAAAAAPYuAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoLgAAAAAAAAAAAAAAAF9D
+b3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAA
 AABIAAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBP
-AAAAAAC9BO/+AAABAAAAAQCBcRQiAAABAIFxFCI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
+AAAAAAC9BO/+AAABAAAAAQDSYSMiAAABANJhIyI/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAA
 RAAAAAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBv
 AG4AAAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAA
 MAAwADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABh
 AG4AeQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4A
 AAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYAOABh
 ADQAYQA4ADAAYwAxADUAMwAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAA
-LgA4ADcAMgA0AC4AMgA5ADAANQA3AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
+LgA4ADcAMwA5AC4AMgA1ADAANAAyAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAA
 AFMAVABfADIAMwBjADAAZABmADUAYwA0ADcAOQA5ADQAZQAzAGQAYQBkADkANwBmAGUAMAA2AGEA
 MAAwAGIANgAxAGEAMQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0
 AAAAQwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAzAAAAKgABAAEATABlAGcAYQBsAFQA
@@ -6248,15 +6134,15 @@ AGEAbQBlAAAAUwBUAF8AMgAzAGMAMABkAGYANQBjADQANwA5ADkANABlADMAZABhAGQAOQA3AGYA
 ZQAwADYAYQAwADAAYgA2ADEAYQAxAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBt
 AGUAAAAAAFMAVABfADIAZQA3AGMAMwAxAGUAYwA1AGEANQA0ADQAOQBjADYAOQA5ADQANwAwAGYA
 OABhADQAYQA4ADAAYwAxADUAMwAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAA
-ADEALgAwAC4AOAA3ADIANAAuADIAOQAwADUANwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
-VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADIANAAuADIAOQAwADUANwAAAAAAAAAAAAAAAAAA
+ADEALgAwAC4AOAA3ADMAOQAuADIANQAwADQAMgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAA
+VgBlAHIAcwBpAG8AbgAAADEALgAwAC4AOAA3ADMAOQAuADIANQAwADQAMgAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAABIPwAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAwAAAAIPwAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -6373,35 +6259,35 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="252,42.6666666666667"
+          Size="252,42.4"
           Id="Package\Check Invalid NULL mandatory fields"
           TopLeft="169.374978501971,309.333332922657" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Execute SP Report Monitoring"
           TopLeft="540.208306309457,399.616230040343" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="222.4,42.4"
           Id="Package\Generate Data From Excel File"
           TopLeft="147.499978827934,232.699997287988" />
         <NodeLayout
-          Size="156,42.6666666666667"
+          Size="156,42.4"
           Id="Package\Get Report Date"
           TopLeft="363.416680427474,131.266667604247" />
         <NodeLayout
-          Size="181.333333333334,42.6666666666667"
+          Size="181.6,42.4"
           Id="Package\Move File After Insert"
           TopLeft="166.406228546209,407.354162667418" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,42.4"
           Id="Package\Raise Error Null"
           TopLeft="573.486578540278,313.58893870994" />
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,42.4"
           Id="Package\Set 'NULL' into NULL"
           TopLeft="566.291637426242,224.833334433635" />
         <NodeLayout
-          Size="368.666666666667,41.3333333333334"
+          Size="368.8,41.6"
           Id="Package\Truncate STG_Corporate_collateral_masterledger"
           TopLeft="148.416683631224,34.8666668414407" />
         <EdgeLayout
@@ -6613,25 +6499,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Generate Data From Excel File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142.666666666667,42.6666666666667"
+          Size="142.4,42.4"
           Id="Package\Generate Data From Excel File\Excel Source"
           TopLeft="269,75" />
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
+          Size="174.4,42.4"
           Id="Package\Generate Data From Excel File\OLE DB Destination"
           TopLeft="251.87499624677,225.192985289425" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="154.4,42.4"
           Id="Package\Generate Data From Excel File\Derived Column"
           TopLeft="714.374989354983,144.848253398259" />
         <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Generate Data From Excel File\Conditional Split"
-          TopLeft="537,72" />
-        <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.4,42.4"
           Id="Package\Generate Data From Excel File\Data Conversion"
           TopLeft="535.624992018565,232.631583326081" />
         <EdgeLayout
@@ -6692,60 +6574,36 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Excel Source Output]"
-          TopLeft="411.666666666667,94.8333333333333">
+          TopLeft="340.2,117.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.333333333333,0"
+              EndConnector="451.374989354983,27.448253398259"
               Start="0,0"
-              End="117.833333333333,0">
+              End="451.374989354983,19.948253398259">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="117.833333333333,0" />
+                    End="0,9.7241266991295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.7241266991295"
+                    Point2="0,13.7241266991295"
+                    Point3="4,13.7241266991295" />
+                  <mssgle:LineSegment
+                    End="447.374989354983,13.7241266991295" />
+                  <mssgle:CubicBezierSegment
+                    Point1="447.374989354983,13.7241266991295"
+                    Point2="451.374989354983,13.7241266991295"
+                    Point3="451.374989354983,17.7241266991295" />
+                  <mssgle:LineSegment
+                    End="451.374989354983,19.948253398259" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Generate Data From Excel File.Paths[Correct Data]"
-          TopLeft="615.666666666667,114.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.04165602165,30.1815867315923"
-              Start="0,0"
-              End="176.04165602165,22.6815867315923">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,11.0907933657962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.0907933657962"
-                    Point2="0,15.0907933657962"
-                    Point3="4,15.0907933657962" />
-                  <mssgle:LineSegment
-                    End="172.04165602165,15.0907933657962" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.04165602165,15.0907933657962"
-                    Point2="176.04165602165,15.0907933657962"
-                    Point3="176.04165602165,19.0907933657962" />
-                  <mssgle:LineSegment
-                    End="176.04165602165,22.6815867315923" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="59.6949491045749,20.0907933657962,56.6517578125,9.5537109375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

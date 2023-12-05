@@ -14,6 +14,16 @@
     <Manifest>
       <DTSPackages>
         <DtsPackage FormatVersion="8">
+          <Name>SLIKtoSTG_AntasenaAllForm.dtsx</Name>
+          <FullPath>SLIKtoSTG_AntasenaAllForm.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SLIKtoSTG_Support_Data_SLIK.dtsx</Name>
+          <FullPath>SLIKtoSTG_Support_Data_SLIK.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
           <Name>STG_AntasenaAllForm_ShareFolder.dtsx</Name>
           <FullPath>STG_AntasenaAllForm_ShareFolder.dtsx</FullPath>
           <References />
@@ -99,13 +109,7 @@
         <LinkedAzureSSISIR />
         <LinkedAzureStorage />
         <RemoteExecutionFolder />
-        <ParameterConfigurationValues>
-          <ConfigurationSetting>
-            <Id>LastModifiedTime</Id>
-            <Name>LastModifiedTime</Name>
-            <Value xsi:type="xsd:dateTime">2023-11-23T08:47:40.9275303Z</Value>
-          </ConfigurationSetting>
-        </ParameterConfigurationValues>
+        <ParameterConfigurationValues />
       </Options>
     </Configuration>
   </Configurations>

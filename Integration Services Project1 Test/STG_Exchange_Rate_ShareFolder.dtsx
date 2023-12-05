@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="148"
-  DTS:VersionGUID="{229E9398-10A1-4F90-AA0C-66E2B53F687E}">
+  DTS:VersionBuild="151"
+  DTS:VersionGUID="{66B08D68-C255-4943-B95A-1F8F6384412F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAfdPYjTrTHTF5iZc+1sSWgduSYv5Xx3mqvbocuaJihxgAAAAAOgAAAAAIAACAAAABx/Ku28xykYuRlr1yugb0VSClk0CvFvnXpVGk8e7QaoyAAAAAg1K7NzypvugjE93q13KJn7x+JSCLb2fs2wUjPXZW600AAAADQdhKwpzB4KF5aTP+vdvK/JTsYfMBMhxWSgCLzPqylk/tsm6W8akjaN/LAFv2VvV8BvGT+Y7Hk/fx0zvPIQJGC</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA7C3vSAwCb0KUV8N558zW3QAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACHaVbeP//vgBl5tcteLSl4wApbmcOtRXNHQkwKeugD1QAAAAAOgAAAAAIAACAAAAA27+VQxwBUuZkadrCIcAA3Sx8e+uvtgu+6ZLFnWZ1i+SAAAAD54t+DGb+RohRvGW6U5u53QJkmx0/3KiFnxGyO8Wth/EAAAACdq9QNnRqwkUp/1tjcN/3cFam9qHZ0eqTiRPH0pPtCe0ueAbm2cJTNeqeAnPSboHgvl2PTfhp11CDGdv6aBpnl</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -856,35 +856,14 @@
           Language="CSharp"
           ReadOnlyVariables="User::InvalidNullRowExchangeRate">
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1262,14 +1241,35 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -1577,7 +1577,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="156,42.4"
           Id="Package\Get Report Date"
-          TopLeft="371.041651435404,98.3693029846385" />
+          TopLeft="273.0824660937,106.016361915415" />
         <NodeLayout
           Size="181.6,42.4"
           Id="Package\Move File After Insert"
@@ -1596,24 +1596,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           TopLeft="153.541654676407,38.1333330681588" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="436.87498800974,59.4666664014921">
+          TopLeft="295.141654676407,80.5333330681588">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="12.1666634256642,38.9026365831463"
+              EndConnector="55.9408114172926,25.4830288472562"
               Start="0,0"
-              End="12.1666634256642,31.4026365831463">
+              End="55.9408114172926,17.9830288472562">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="8.16666342566418,0" />
+                    End="0,8.74151442362811" />
                   <mssgle:CubicBezierSegment
-                    Point1="8.16666342566418,0"
-                    Point2="12.1666634256642,0"
-                    Point3="12.1666634256642,4" />
+                    Point1="0,8.74151442362811"
+                    Point2="0,12.7415144236281"
+                    Point3="4,12.7415144236281" />
                   <mssgle:LineSegment
-                    End="12.1666634256642,31.4026365831463" />
+                    End="51.9408114172926,12.7415144236281" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.9408114172926,12.7415144236281"
+                    Point2="55.9408114172926,12.7415144236281"
+                    Point3="55.9408114172926,16.7415144236281" />
+                  <mssgle:LineSegment
+                    End="55.9408114172926,17.9830288472562" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1624,30 +1630,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="449.041651435404,141.035969651305">
+          TopLeft="351.0824660937,148.416361915415">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-136.05829916311,43.7499965712429"
+              EndConnector="-38.2324471547386,36.369604307133"
               Start="0,0"
-              End="-136.05829916311,36.2499965712429">
+              End="-38.2324471547386,28.869604307133">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.8749982856214" />
+                    End="0,14.1848021535665" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.8749982856214"
-                    Point2="0,21.8749982856214"
-                    Point3="-4,21.8749982856214" />
+                    Point1="0,14.1848021535665"
+                    Point2="0,18.1848021535665"
+                    Point3="-4,18.1848021535665" />
                   <mssgle:LineSegment
-                    End="-132.05829916311,21.8749982856214" />
+                    End="-34.2324471547386,18.1848021535665" />
                   <mssgle:CubicBezierSegment
-                    Point1="-132.05829916311,21.8749982856214"
-                    Point2="-136.05829916311,21.8749982856214"
-                    Point3="-136.05829916311,25.8749982856214" />
+                    Point1="-34.2324471547386,18.1848021535665"
+                    Point2="-38.2324471547386,18.1848021535665"
+                    Point3="-38.2324471547386,22.1848021535665" />
                   <mssgle:LineSegment
-                    End="-136.05829916311,36.2499965712429" />
+                    End="-38.2324471547386,28.869604307133" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1809,21 +1815,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Generate Data From Excel File">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174.666666666667,42.6666666666667"
+          Size="174.4,42.4"
           Id="Package\Generate Data From Excel File\OLE DB Destination"
           TopLeft="260,273" />
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="139.2,42.4"
           Id="Package\Generate Data From Excel File\Excel Source"
           TopLeft="269,75" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="154.4,42.4"
           Id="Package\Generate Data From Excel File\Derived Column"
           TopLeft="519.374996135011,88.3666718039909" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
+          Size="158.4,42.4"
           Id="Package\Generate Data From Excel File\Data Conversion"
           TopLeft="273.250003036112,169.949999965131" />
         <EdgeLayout
@@ -1857,9 +1863,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1881,9 +1885,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1917,9 +1919,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
