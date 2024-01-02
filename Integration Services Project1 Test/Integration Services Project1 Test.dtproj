@@ -24,8 +24,8 @@
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">
-          <Name>STG_Corporate_Collateral_Master_Ledger.dtsx</Name>
-          <FullPath>STG_Corporate_Collateral_Master_Ledger.dtsx</FullPath>
+          <Name>STG_Corporate_Collateral_Master_Ledger_ShareFolder.dtsx</Name>
+          <FullPath>STG_Corporate_Collateral_Master_Ledger_ShareFolder.dtsx</FullPath>
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">

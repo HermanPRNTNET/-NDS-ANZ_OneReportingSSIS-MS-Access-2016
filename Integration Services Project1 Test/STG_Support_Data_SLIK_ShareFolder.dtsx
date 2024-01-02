@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STG_Support_Data_SLIK_ShareFolder"
   DTS:PackageType="5"
-  DTS:VersionBuild="99"
-  DTS:VersionGUID="{9B02D647-EC57-4E91-8C87-578CD2E65184}">
+  DTS:VersionBuild="102"
+  DTS:VersionGUID="{5D159FA5-4B6A-4AF0-B307-9FF1D8B4B997}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgJgy+J8xZ0+sWxO2VhXIcwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACrc/wMs90ySJrtSsMrod1Q7xt5Lrvs6wKx/3AsbfaQJQAAAAAOgAAAAAIAACAAAAAbWzsAx05NEK44mCAf8XDPJX1bnQ1xkWuhBr63Dtd/diAAAABEVF8M5iUSeml1ONyi00s36spwUVx9G6h6u3zZZ6ktxEAAAAAoLWDkLonUXGkGHuYzpw7HZOiLMTGw8lFWqeg7VI7ao78WjkKUN3yogK4aWrP4jJ1XD/7sTL2C2BWtJ26LTskH</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgJgy+J8xZ0+sWxO2VhXIcwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADjKi3XbNIvNnop3BlGrVBcPiTMCNbx6kda7uhzx9D/lQAAAAAOgAAAAAIAACAAAABcX+wV3zQvnaxyWV2SNEkN38prK+37g9q6PxdfH10whCAAAAD6t86PI6HIN9do1LCfQH13BV+rgWMapRMRrh8W31m8rUAAAAB4qXxSfyFRLM/D/V/XboHyGXLIEFQnIbjatuO1HaacSM/cKw0C+mhLvWtL9xxGYwbPQfOyRSvdIPZhRfq6samt</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -215,131 +215,131 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F1]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[CIF]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F1"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]" />
+                      cachedName="CIF"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CIF]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F2]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Link_LBU]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F2"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]" />
+                      cachedName="Link_LBU"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Link_LBU]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F3]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[No_Rek]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F3"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]" />
+                      cachedName="No_Rek"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[No_Rek]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F4]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[CUSTOMER_NAME]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F4"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]" />
+                      cachedName="CUSTOMER_NAME"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CUSTOMER_NAME]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F5]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Kolektibilitas]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F5"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]" />
+                      cachedName="Kolektibilitas"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kolektibilitas]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F6]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Macet_Tanggal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F6"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]" />
+                      cachedName="Macet_Tanggal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F7]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Macet_Code]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F7"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]" />
+                      cachedName="Macet_Code"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Code]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F8]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Pokok_Tanggal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F8"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]" />
+                      cachedName="Tunggakan_Pokok_Tanggal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F9]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Pokok_Nominal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F9"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]" />
+                      cachedName="Tunggakan_Pokok_Nominal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Nominal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F10]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Pokok_Frekuensi]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F10"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]" />
+                      cachedName="Tunggakan_Pokok_Frekuensi"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Frekuensi]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F11]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Bunga_Intra]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F11"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]" />
+                      cachedName="Tunggakan_Bunga_Intra"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Intra]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F12]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Bunga_Ekstra]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F12"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]" />
+                      cachedName="Tunggakan_Bunga_Ekstra"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Ekstra]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F13]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Tunggakan_Bunga_Frekuensi]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F13"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]" />
+                      cachedName="Tunggakan_Bunga_Frekuensi"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Frekuensi]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F14]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Denda]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F14"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]" />
+                      cachedName="Denda"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Denda]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F15]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Kondisi_Kode]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F15"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]" />
+                      cachedName="Kondisi_Kode"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Kode]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F16]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Kondisi_Tanggal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F16"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]" />
+                      cachedName="Kondisi_Tanggal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F17]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Restrukturisasi_Tanggal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F17"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]" />
+                      cachedName="Restrukturisasi_Tanggal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F18]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Restrukturisasi_Ke]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F18"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]" />
+                      cachedName="Restrukturisasi_Ke"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Ke]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F19]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Restrukturisasi_Awal]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F19"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]" />
+                      cachedName="Restrukturisasi_Awal"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Awal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F20]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Restrukturisasi_Cara]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F20"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]" />
+                      cachedName="Restrukturisasi_Cara"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Cara]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[F21]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[DPD]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="F21"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]" />
+                      cachedName="DPD"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[DPD]" />
                     <inputColumn
                       refId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input].Columns[Derived Column 1]"
                       cachedDataType="date"
@@ -357,21 +357,21 @@
                   synchronousInputId="Package\Generate Data From Excel File\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]"
-                      name="Copy of F1"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]"
+                      name="Copy of CIF"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CIF]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -379,21 +379,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Link_LBU]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]"
-                      name="Copy of F2"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Link_LBU]"
+                      name="Copy of Link_LBU"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Link_LBU]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -401,21 +401,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of No_Rek]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]"
-                      name="Copy of F3"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of No_Rek]"
+                      name="Copy of No_Rek"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[No_Rek]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -423,21 +423,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_NAME]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]"
-                      name="Copy of F4"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_NAME]"
+                      name="Copy of CUSTOMER_NAME"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CUSTOMER_NAME]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -445,21 +445,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kolektibilitas]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]"
-                      name="Copy of F5"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kolektibilitas]"
+                      name="Copy of Kolektibilitas"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kolektibilitas]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -467,21 +467,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Tanggal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]"
-                      name="Copy of F6"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Tanggal]"
+                      name="Copy of Macet_Tanggal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Tanggal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -489,21 +489,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]"
-                      name="Copy of F7"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Code]"
+                      name="Copy of Macet_Code"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Code]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -511,21 +511,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Tanggal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]"
-                      name="Copy of F8"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Tanggal]"
+                      name="Copy of Tunggakan_Pokok_Tanggal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Tanggal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -533,21 +533,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Nominal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]"
-                      name="Copy of F9"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Nominal]"
+                      name="Copy of Tunggakan_Pokok_Nominal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Nominal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -555,21 +555,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Frekuensi]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]"
-                      name="Copy of F10"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Frekuensi]"
+                      name="Copy of Tunggakan_Pokok_Frekuensi"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Frekuensi]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -577,21 +577,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Intra]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]"
-                      name="Copy of F11"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Intra]"
+                      name="Copy of Tunggakan_Bunga_Intra"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Intra]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -599,21 +599,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Ekstra]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]"
-                      name="Copy of F12"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Ekstra]"
+                      name="Copy of Tunggakan_Bunga_Ekstra"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Ekstra]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -621,21 +621,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Frekuensi]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]"
-                      name="Copy of F13"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Frekuensi]"
+                      name="Copy of Tunggakan_Bunga_Frekuensi"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Frekuensi]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -643,21 +643,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Denda]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]"
-                      name="Copy of F14"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Denda]"
+                      name="Copy of Denda"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Denda]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -665,21 +665,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Kode]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]"
-                      name="Copy of F15"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Kode]"
+                      name="Copy of Kondisi_Kode"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Kode]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -687,21 +687,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Tanggal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]"
-                      name="Copy of F16"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Tanggal]"
+                      name="Copy of Kondisi_Tanggal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Tanggal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -709,21 +709,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Tanggal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]"
-                      name="Copy of F17"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Tanggal]"
+                      name="Copy of Restrukturisasi_Tanggal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Tanggal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -731,21 +731,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Ke]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]"
-                      name="Copy of F18"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Ke]"
+                      name="Copy of Restrukturisasi_Ke"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Ke]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -753,21 +753,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Awal]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]"
-                      name="Copy of F19"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Awal]"
+                      name="Copy of Restrukturisasi_Awal"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Awal]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -775,21 +775,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Cara]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]"
-                      name="Copy of F20"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Cara]"
+                      name="Copy of Restrukturisasi_Cara"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Cara]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -797,21 +797,21 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]"
+                      refId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DPD]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]"
-                      name="Copy of F21"
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DPD]"
+                      name="Copy of DPD"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[DPD]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -992,214 +992,214 @@
                   name="Excel Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CIF]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F1]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F1]"
-                      name="F1"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CIF]"
+                      name="CIF"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Link_LBU]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F2]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F2]"
-                      name="F2"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Link_LBU]"
+                      name="Link_LBU"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[No_Rek]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F3]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F3]"
-                      name="F3"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[No_Rek]"
+                      name="No_Rek"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CUSTOMER_NAME]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F4]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F4]"
-                      name="F4"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[CUSTOMER_NAME]"
+                      name="CUSTOMER_NAME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kolektibilitas]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F5]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F5]"
-                      name="F5"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kolektibilitas]"
+                      name="Kolektibilitas"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Tanggal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F6]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F6]"
-                      name="F6"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Tanggal]"
+                      name="Macet_Tanggal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Code]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F7]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F7]"
-                      name="F7"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Macet_Code]"
+                      name="Macet_Code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Tanggal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F8]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F8]"
-                      name="F8"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Tanggal]"
+                      name="Tunggakan_Pokok_Tanggal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Nominal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F9]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F9]"
-                      name="F9"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Nominal]"
+                      name="Tunggakan_Pokok_Nominal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Frekuensi]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F10]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F10]"
-                      name="F10"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Pokok_Frekuensi]"
+                      name="Tunggakan_Pokok_Frekuensi"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Intra]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F11]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F11]"
-                      name="F11"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Intra]"
+                      name="Tunggakan_Bunga_Intra"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Ekstra]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F12]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F12]"
-                      name="F12"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Ekstra]"
+                      name="Tunggakan_Bunga_Ekstra"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Frekuensi]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F13]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F13]"
-                      name="F13"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Tunggakan_Bunga_Frekuensi]"
+                      name="Tunggakan_Bunga_Frekuensi"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Denda]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F14]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F14]"
-                      name="F14"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Denda]"
+                      name="Denda"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Kode]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F15]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F15]"
-                      name="F15"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Kode]"
+                      name="Kondisi_Kode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Tanggal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F16]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F16]"
-                      name="F16"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Kondisi_Tanggal]"
+                      name="Kondisi_Tanggal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Tanggal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F17]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F17]"
-                      name="F17"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Tanggal]"
+                      name="Restrukturisasi_Tanggal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Ke]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F18]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F18]"
-                      name="F18"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Ke]"
+                      name="Restrukturisasi_Ke"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Awal]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F19]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F19]"
-                      name="F19"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Awal]"
+                      name="Restrukturisasi_Awal"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Cara]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F20]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F20]"
-                      name="F20"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[Restrukturisasi_Cara]"
+                      name="Restrukturisasi_Cara"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]"
+                      refId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[DPD]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].ExternalColumns[F21]"
                       length="255"
-                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[F21]"
-                      name="F21"
+                      lineageId="Package\Generate Data From Excel File\Excel Source.Outputs[Excel Source Output].Columns[DPD]"
+                      name="DPD"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1512,173 +1512,173 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F1]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CIF]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F1"
+                      cachedName="Copy of CIF"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CIF]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F1]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CIF]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F2]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Link_LBU]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F2"
+                      cachedName="Copy of Link_LBU"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Link_LBU]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F2]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Link_LBU]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F3]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of No_Rek]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F3"
+                      cachedName="Copy of No_Rek"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[No_Rek]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F3]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of No_Rek]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F4]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of CUSTOMER_NAME]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F4"
+                      cachedName="Copy of CUSTOMER_NAME"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_NAME]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F4]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of CUSTOMER_NAME]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F5]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Kolektibilitas]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F5"
+                      cachedName="Copy of Kolektibilitas"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kolektibilitas]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F5]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kolektibilitas]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F6]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Macet_Tanggal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F6"
+                      cachedName="Copy of Macet_Tanggal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Tanggal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F6]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F7]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Macet_Code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F7"
+                      cachedName="Copy of Macet_Code"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Macet_Code]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F7]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Macet_Code]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F8]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Pokok_Tanggal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F8"
+                      cachedName="Copy of Tunggakan_Pokok_Tanggal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Tanggal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F8]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F9]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Pokok_Nominal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F9"
+                      cachedName="Copy of Tunggakan_Pokok_Nominal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Nominal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F9]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Nominal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F10]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Pokok_Frekuensi]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F10"
+                      cachedName="Copy of Tunggakan_Pokok_Frekuensi"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Pokok_Frekuensi]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F10]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Pokok_Frekuensi]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F11]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Bunga_Intra]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F11"
+                      cachedName="Copy of Tunggakan_Bunga_Intra"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Intra]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F11]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Intra]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F12]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Bunga_Ekstra]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F12"
+                      cachedName="Copy of Tunggakan_Bunga_Ekstra"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Ekstra]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F12]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Ekstra]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F13]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Tunggakan_Bunga_Frekuensi]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F13"
+                      cachedName="Copy of Tunggakan_Bunga_Frekuensi"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tunggakan_Bunga_Frekuensi]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F13]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Tunggakan_Bunga_Frekuensi]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F14]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Denda]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F14"
+                      cachedName="Copy of Denda"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Denda]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F14]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Denda]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F15]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Kondisi_Kode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F15"
+                      cachedName="Copy of Kondisi_Kode"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Kode]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F15]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Kode]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F16]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Kondisi_Tanggal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F16"
+                      cachedName="Copy of Kondisi_Tanggal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kondisi_Tanggal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F16]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Kondisi_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F17]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Restrukturisasi_Tanggal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F17"
+                      cachedName="Copy of Restrukturisasi_Tanggal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Tanggal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F17]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Tanggal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F18]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Restrukturisasi_Ke]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F18"
+                      cachedName="Copy of Restrukturisasi_Ke"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Ke]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F18]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Ke]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F19]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Restrukturisasi_Awal]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F19"
+                      cachedName="Copy of Restrukturisasi_Awal"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Awal]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F19]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Awal]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F20]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Restrukturisasi_Cara]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F20"
+                      cachedName="Copy of Restrukturisasi_Cara"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Restrukturisasi_Cara]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F20]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Restrukturisasi_Cara]" />
                     <inputColumn
-                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of F21]"
+                      refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of DPD]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
-                      cachedName="Copy of F21"
+                      cachedName="Copy of DPD"
                       externalMetadataColumnId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DPD]"
-                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of F21]" />
+                      lineageId="Package\Generate Data From Excel File\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of DPD]" />
                     <inputColumn
                       refId="Package\Generate Data From Excel File\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Derived Column 1]"
                       cachedDataType="date"
@@ -1974,14 +1974,35 @@
           Language="CSharp"
           ReadOnlyVariables="User::InvalidNullRow">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2359,35 +2380,14 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -2877,22 +2877,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="174.4,42.4"
           Id="Package\Generate Data From Excel File\OLE DB Destination"
-          TopLeft="253.125000251457,260.950000197589" />
+          TopLeft="60,275.199999674558" />
         <NodeLayout
           Size="154.4,42.4"
           Id="Package\Generate Data From Excel File\Derived Column"
-          TopLeft="473.124996973201,46.4166725362336" />
+          TopLeft="279.999996721744,60.6666720132029" />
         <NodeLayout
           Size="157.6,42.4"
           Id="Package\Generate Data From Excel File\Data Conversion"
-          TopLeft="266.125003529713,165.499999883771" />
+          TopLeft="73.000003278256,179.74999936074" />
         <NodeLayout
           Size="139.2,42.4"
           Id="Package\Generate Data From Excel File\Excel Source"
-          TopLeft="285.249999757856,45.7500005230307" />
+          TopLeft="92.124999506399,60" />
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Data Conversion Output]"
-          TopLeft="342.625001890585,208.166666550438">
+          TopLeft="149.500001639128,222.416666027407">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2914,7 +2914,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Excel Source Output]"
-          TopLeft="424.583333091189,67.4166698629655">
+          TopLeft="231.458332839732,81.6666693399348">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2936,7 +2936,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Generate Data From Excel File.Paths[Derived Column Output]"
-          TopLeft="550.458330306535,89.0833392029003">
+          TopLeft="357.333330055078,103.33333867987">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2971,26 +2971,5 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generate Data From Excel File\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Generate Data From Excel File\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

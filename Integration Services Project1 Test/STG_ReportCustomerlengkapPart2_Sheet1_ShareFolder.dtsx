@@ -12,8 +12,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STG_ReportCustomerlengkapPart2_Sheet1_ShareFolder"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{69E9660C-DFBD-4F1F-8146-488D68592A37}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{6474CF2E-316B-418D-A0D1-6C3D6B0FC33C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgJgy+J8xZ0+sWxO2VhXIcwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD/rnLuXkuH0+KpoCh6fJVlGQUlqN0oBjg9K6XKE9e2sAAAAAAOgAAAAAIAACAAAAAJ3T01vUf+cGKgyLe255JBbL4YMCb5XVH6GXxUCTS5dCAAAACRHFpEvVhmPILanbcBOYT11QkYaNxEj0jVf3iW39e0uUAAAAAdsXKy1ZcYfvuf3YKf/zjhWP86IPzJiMbXDvlBao5LLjj9RVbwbb9Xm7VU6Us7W62s/NUlcUy8y+0BJtHSAAkm</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgJgy+J8xZ0+sWxO2VhXIcwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADsjCYELNrtGWo11lbE2swviY9E32UOJdmTkzt3cscwigAAAAAOgAAAAAIAACAAAACnKGwezvfSyuxCpPLc0Jesmk8dNkSoroA8LGJu4ODo7SAAAABQvfsb0Az6gFD16NdD+ANKbsko7BPH2RFQ0QKrjCD2cUAAAAATNl7ckD3+7nCck4o7H+Pxoo7lFauFhQt+/f4fOid4uxXRuNDsIwlfFXVRdKNTbqQIBaPgDIF1EpilNwEZyi+y</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -381,6 +381,18 @@
                       cachedDataType="date"
                       cachedName="Report_Date"
                       lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Derived Column.Outputs[Derived Column Output].Columns[Report_Date]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Alamat]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Alamat"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Alamat]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Inputs[Data Conversion Input].Columns[Zip Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Zip Code"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Zip Code]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -984,6 +996,50 @@
                           name="FastParse">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Alamat]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="300"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Alamat]"
+                      name="Copy of Alamat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Alamat]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="5"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Zip Code]"
+                      name="Copy of Zip Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Zip Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1109,7 +1165,8 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [Sheet1$A4:Z]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM     [Sheet1$A4:AB]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1397,6 +1454,26 @@
                       lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Tax Status]"
                       name="Tax Status"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Alamat]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Alamat]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Alamat]"
+                      name="Alamat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Zip Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Zip Code]"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].Columns[Zip Code]"
+                      name="Zip Code"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1530,6 +1607,16 @@
                       dataType="wstr"
                       length="255"
                       name="Tax Status" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Alamat]"
+                      dataType="wstr"
+                      length="255"
+                      name="Alamat" />
+                    <externalMetadataColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Output].ExternalColumns[Zip Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Zip Code" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1693,6 +1780,18 @@
                       length="255"
                       lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Tax Status]"
                       name="Tax Status" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Alamat]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Alamat]"
+                      name="Alamat" />
+                    <outputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Zip Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[Zip Code]"
+                      name="Zip Code" />
                     <outputColumn
                       refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source.Outputs[Excel Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1988,6 +2087,22 @@
                       cachedName="Copy of Report_Date"
                       externalMetadataColumnId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Report_Date]"
                       lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Report_Date]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Alamat]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="300"
+                      cachedName="Copy of Alamat"
+                      externalMetadataColumnId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Alamat]"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Alamat]" />
+                    <inputColumn
+                      refId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Zip Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Copy of Zip Code"
+                      externalMetadataColumnId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ZIP_Code]"
+                      lineageId="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Zip Code]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2291,14 +2406,35 @@
           Language="CSharp"
           ReadOnlyVariables="User::InvalidNullRow">
           <ProjectItem
-            Name="Properties\Settings.settings"
-            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+            Name="Properties\AssemblyInfo.cs"
+            Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
+[assembly: AssemblyCopyright("Copyright @  2023")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.resx"
             Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -2676,35 +2812,14 @@ namespace ST_2e7c31ec5a5449c699470f8a4a80c153.Properties {
     }
 }]]></ProjectItem>
           <ProjectItem
-            Name="Properties\AssemblyInfo.cs"
-            Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_2e7c31ec5a5449c699470f8a4a80c153")]
-[assembly: AssemblyCopyright("Copyright @  2023")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+            Name="Properties\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
           <ProjectItem
             Name="Properties\Resources.Designer.cs"
             Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -3295,24 +3410,24 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138.4,41.6"
-          Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source"
-          TopLeft="75.3571462958143,35.1000018610323" />
+          Size="170.4,41.6"
+          Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination"
+          TopLeft="356.071431458149,187.782353364508" />
         <NodeLayout
           Size="154.4,42.4"
           Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Derived Column"
-          TopLeft="294.732143026872,64.2323584915765" />
+          TopLeft="279.374996731058,89.1323566305442" />
         <NodeLayout
           Size="155.2,41.6"
           Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Data Conversion"
-          TopLeft="140,162" />
+          TopLeft="124.642853704186,186.899998138968" />
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination"
-          TopLeft="371.428577753963,162.88235522554" />
+          Size="138.4,41.6"
+          Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source"
+          TopLeft="60,60" />
         <EdgeLayout
           Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1.Paths[Excel Source Output]"
-          TopLeft="214.023812962481,55.7666685276989">
+          TopLeft="198.666666666667,80.6666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3346,7 +3461,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1.Paths[Derived Column Output]"
-          TopLeft="372.065476360205,106.899025158243">
+          TopLeft="356.708330064391,131.799023297211">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3380,7 +3495,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1.Paths[Data Conversion Output]"
-          TopLeft="295.2,183.24117761277">
+          TopLeft="279.842853704186,208.141175751738">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -3404,14 +3519,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\OLE DB Destination">
     <Properties>
       <Property>
@@ -3421,6 +3528,14 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Excel To STG_ReportCustomerlengkapPart2_Sheet1\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
